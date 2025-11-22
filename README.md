@@ -198,20 +198,54 @@ streamlitv2/
 - **Type Safety**: Pydantic models with full validation
 - **Fallback Architecture**: Features work with or without cache
 
+## 📁 Project Structure
+
+```
+datasphere-tools/
+├── docs/                      # 📚 Documentation
+│   ├── guides/                # User guides
+│   │   ├── quick-start.md
+│   │   ├── migration-guide.md
+│   │   └── deployment.md
+│   └── reference/             # Technical reference
+│       ├── api-endpoints.md
+│       └── implementation.md
+│
+├── Streamlit1/                # 🔧 Core application modules
+│   ├── core modules           # API client, DB client, cache, models
+│   ├── features/              # Lineage, documentation, analysis
+│   ├── config/                # Configuration management
+│   └── ui/                    # UI components
+│
+├── streamlit_appV2.py         # 🚀 Main application entry point
+├── requirements.txt           # Production dependencies
+├── requirements-dev.txt       # Development dependencies
+├── pyproject.toml             # Modern Python project config
+├── LICENSE                    # Internal use only
+└── README.md                  # This file
+
+# Local only (not in Git):
+├── scripts/                   # Build and install scripts
+├── examples/                  # Example lineage files
+├── config.json                # Your configuration
+└── venv/                      # Virtual environment
+```
+
 ## 🔧 Development
 
 ### Setting Up Development Environment
 
 ```bash
 # Clone repository
-git clone <repo-url>
-cd streamlitv2
+git clone https://github.com/mathiasmid/Streamlit-Datasphere-tools.git
+cd Streamlit-Datasphere-tools
 
 # Install dependencies (including dev tools)
 pip install -r requirements.txt
+pip install -r requirements-dev.txt
 
-# Run tests
-pytest
+# Run application
+streamlit run streamlit_appV2.py
 
 # Code formatting
 black Streamlit1/
@@ -222,6 +256,10 @@ mypy Streamlit1/
 # Linting
 pylint Streamlit1/
 ```
+
+### Building Executable (Internal)
+
+See `scripts/build_executable.py` and `docs/guides/build-executable.md` for creating standalone executables.
 
 ## 📋 Troubleshooting
 

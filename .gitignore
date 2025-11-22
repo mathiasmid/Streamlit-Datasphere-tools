@@ -67,11 +67,18 @@ DatasphereTools_v*.zip
 
 # Test/Example data
 API*.txt
-examples/api_responses/*.json
+examples/
 test_api_responses.py
 
-# Legacy code
+# Scripts and build tools (internal distribution only)
+scripts/
+
+# Legacy code and old structure
 legacy_code/
+Streamlit1/
+
+# Development tools
+update_imports.py
 
 # Claude workspace
 .claude/
