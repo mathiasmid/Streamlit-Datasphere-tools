@@ -1,0 +1,6068 @@
+{
+  "definitions": {
+    "02_DWH_LT_UNIVERSALLEDGER": {
+      "kind": "entity",
+      "elements": {
+        "SourceLedger": {
+          "@EndUserText.label": "Source ledger",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "AccountingDocument": {
+          "@EndUserText.label": "Journal entry",
+          "type": "cds.String",
+          "length": 10,
+          "key": true,
+          "notNull": true
+        },
+        "LedgerGLLineItem": {
+          "@EndUserText.label": "Ledger journal entry item",
+          "type": "cds.String",
+          "length": 6,
+          "key": true,
+          "notNull": true
+        },
+        "LedgerFiscalYear": {
+          "@EndUserText.label": "Ledger fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "GLRecordType": {
+          "@EndUserText.label": "Record type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntrAltvFYConsecutiveID": {
+          "@EndUserText.label": "Shifted fiscal year consecutive id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialTransactionType": {
+          "@EndUserText.label": "Financial transaction type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "GLBusinessTransactionType": {
+          "@EndUserText.label": "Transaction type for general ledger",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessTransactionCategory": {
+          "@EndUserText.label": "Business transaction category",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessTransactionType": {
+          "@EndUserText.label": "Business transaction type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialClosingStep": {
+          "@EndUserText.label": "Financial closing step",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ControllingBusTransacType": {
+          "@EndUserText.label": "Co business transaction",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReferenceDocumentType": {
+          "@EndUserText.label": "Reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocumentContext": {
+          "@EndUserText.label": "Reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocument": {
+          "@EndUserText.label": "Reference document number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocumentItem": {
+          "@EndUserText.label": "Reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReferenceDocumentItemGroup": {
+          "@EndUserText.label": "Reference document item group",
+          "type": "cds.String",
+          "length": 6
+        },
+        "TransactionSubitem": {
+          "@EndUserText.label": "Partial document to be balanced to zero",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsReversal": {
+          "@EndUserText.label": "Indicator: item is reversing another item",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsReversed": {
+          "@EndUserText.label": "Indicator: item is reversed",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ReversalReferenceDocumentCntxt": {
+          "@EndUserText.label": "Reversal reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReversalReferenceDocument": {
+          "@EndUserText.label": "Reversal reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReversalTransactionSubitem": {
+          "@EndUserText.label": "Reversal transaction sub item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsSettlement": {
+          "@EndUserText.label": "Indicator: item is settling or transferring another item",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSettled": {
+          "@EndUserText.label": "Indicator: line item is settled or transferred",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PredecessorReferenceDocType": {
+          "@EndUserText.label": "Predecessor reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "PredecessorReferenceDocCntxt": {
+          "@EndUserText.label": "Predecessor reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorReferenceDocument": {
+          "@EndUserText.label": "Predecessor reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorReferenceDocItem": {
+          "@EndUserText.label": "Predecessor reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PrdcssrJournalEntryCompanyCode": {
+          "@EndUserText.label": "Preceding journal entry company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PrdcssrJournalEntryFiscalYear": {
+          "@EndUserText.label": "Preceding journal entry fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PredecessorJournalEntry": {
+          "@EndUserText.label": "Preceding journal entry document number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorJournalEntryItem": {
+          "@EndUserText.label": "Preceding journal entry line item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SourceReferenceDocumentType": {
+          "@EndUserText.label": "Source reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "SourceLogicalSystem": {
+          "@EndUserText.label": "Source logical system",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocumentCntxt": {
+          "@EndUserText.label": "Source reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocument": {
+          "@EndUserText.label": "Source reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocumentItem": {
+          "@EndUserText.label": "Source reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SourceReferenceDocSubitem": {
+          "@EndUserText.label": "Source reference document subitem",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsCommitment": {
+          "@EndUserText.label": "Indicator: is commitment",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntryItemObsoleteReason": {
+          "@EndUserText.label": "Journal entry item obsolete reason",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlPeriodEndClosingRunLogUUID": {
+          "@EndUserText.label": "Uuid of financial closing run",
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "OrganizationalChange": {
+          "@EndUserText.label": "Organizational change",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GLAccount": {
+          "@EndUserText.label": "G/l account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "length": 16
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Segment": {
+          "@EndUserText.label": "Segment for segmental reporting",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerCostCenter": {
+          "@EndUserText.label": "Partner cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerProfitCenter": {
+          "@EndUserText.label": "Partner profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerFunctionalArea": {
+          "@EndUserText.label": "Partner functional area",
+          "type": "cds.String",
+          "length": 16
+        },
+        "PartnerBusinessArea": {
+          "@EndUserText.label": "Partner business area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerCompany": {
+          "@EndUserText.label": "Company id of trading partner",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerSegment": {
+          "@EndUserText.label": "Partner segment for segmental reporting",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BalanceTransactionCurrency": {
+          "@EndUserText.label": "Balance transaction currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInBalanceTransacCrcy": {
+          "@EndUserText.label": "Amount in balance transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "TransactionCurrency": {
+          "@EndUserText.label": "Transaction currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInTransactionCurrency": {
+          "@EndUserText.label": "Amount in transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "CompanyCodeCurrency": {
+          "@EndUserText.label": "Company code currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInCompanyCodeCurrency": {
+          "@EndUserText.label": "Amount in company code currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GlobalCurrency": {
+          "@EndUserText.label": "Global currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInGlobalCurrency": {
+          "@EndUserText.label": "Amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FunctionalCurrency": {
+          "@EndUserText.label": "Functional currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFunctionalCurrency": {
+          "@EndUserText.label": "Amount in functional currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency1": {
+          "@EndUserText.label": "Freely defined currency 1",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency1": {
+          "@EndUserText.label": "Amount in freely defined currency 1",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency2": {
+          "@EndUserText.label": "Freely defined currency 2",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency2": {
+          "@EndUserText.label": "Amount in freely defined currency 2",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency3": {
+          "@EndUserText.label": "Freely defined currency 3",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency3": {
+          "@EndUserText.label": "Amount in freely defined currency 3",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency4": {
+          "@EndUserText.label": "Freely defined currency 4",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency4": {
+          "@EndUserText.label": "Amount in freely defined currency 4",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency5": {
+          "@EndUserText.label": "Freely defined currency 5",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency5": {
+          "@EndUserText.label": "Amount in freely defined currency 5",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency6": {
+          "@EndUserText.label": "Freely defined currency 6",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency6": {
+          "@EndUserText.label": "Amount in freely defined currency 6",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency7": {
+          "@EndUserText.label": "Freely defined currency 7",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency7": {
+          "@EndUserText.label": "Amount in freely defined currency 7",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency8": {
+          "@EndUserText.label": "Freely defined currency 8",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency8": {
+          "@EndUserText.label": "Amount in freely defined currency 8",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedAmountInGlobalCrcy": {
+          "@EndUserText.label": "Fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnFixedAmtInGlobCrcy": {
+          "@EndUserText.label": "Group valuation fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnFxdAmtInGlobCrcy": {
+          "@EndUserText.label": "Profit center valuation fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedAmountInCoCodeCrcy": {
+          "@EndUserText.label": "Fixed amount in company currency",
+          "type": "cds.DecimalFloat"
+        },
+        "TotalPriceVarcInGlobalCrcy": {
+          "@EndUserText.label": "Total price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnTotPrcVarcInGlobCrcy": {
+          "@EndUserText.label": "Group valuation total price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnTotPrcVarcInGlbCrcy": {
+          "@EndUserText.label": "Profit center valuation total price variance in global cur.",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedPriceVarcInGlobalCrcy": {
+          "@EndUserText.label": "Fixed price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnFixedPrcVarcInGlobCrcy": {
+          "@EndUserText.label": "Group valuation fixed price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnFxdPrcVarcInGlbCrcy": {
+          "@EndUserText.label": "Profit center valuation fixed price variance in global cur.",
+          "type": "cds.DecimalFloat"
+        },
+        "ControllingObjectCurrency": {
+          "@EndUserText.label": "Co object currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInObjectCurrency": {
+          "@EndUserText.label": "Amount in object currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrantCurrency": {
+          "@EndUserText.label": "Grant currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInGrantCurrency": {
+          "@EndUserText.label": "Grant amount in grant currency",
+          "type": "cds.DecimalFloat"
+        },
+        "BaseUnit": {
+          "@EndUserText.label": "Base unit of measure",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Quantity": {
+          "@EndUserText.label": "Quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "FixedQuantity": {
+          "@EndUserText.label": "Fixed quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "CostSourceUnit": {
+          "@EndUserText.label": "Cost source unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ValuationQuantity": {
+          "@EndUserText.label": "Valuation quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ValuationFixedQuantity": {
+          "@EndUserText.label": "Valuation fixed quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ReferenceQuantityUnit": {
+          "@EndUserText.label": "Unit of measure for reference quantity",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReferenceQuantity": {
+          "@EndUserText.label": "Reference quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity1Unit": {
+          "@EndUserText.label": "Additional quantity 1 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity1": {
+          "@EndUserText.label": "Additional quantity 1",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity2Unit": {
+          "@EndUserText.label": "Additional quantity 2 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity2": {
+          "@EndUserText.label": "Additional quantity 2",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity3Unit": {
+          "@EndUserText.label": "Additional quantity 3 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity3": {
+          "@EndUserText.label": "Additional quantity 3",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "DebitCreditCode": {
+          "@EndUserText.label": "Debit/credit code",
+          "type": "cds.String",
+          "length": 1
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FiscalYearPeriod": {
+          "@EndUserText.label": "Fiscal year period",
+          "type": "cds.String",
+          "length": 7
+        },
+        "PostingDate": {
+          "@EndUserText.label": "Posting date",
+          "type": "cds.Date"
+        },
+        "DocumentDate": {
+          "@EndUserText.label": "Journal entry date",
+          "type": "cds.Date"
+        },
+        "AccountingDocumentType": {
+          "@EndUserText.label": "Journal entry type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountingDocumentItem": {
+          "@EndUserText.label": "Journal entry posting view item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AssignmentReference": {
+          "@EndUserText.label": "Assignment reference",
+          "type": "cds.String",
+          "length": 18
+        },
+        "AccountingDocumentCategory": {
+          "@EndUserText.label": "Journal entry category",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PostingKey": {
+          "@EndUserText.label": "Posting key",
+          "type": "cds.String",
+          "length": 2
+        },
+        "TransactionTypeDetermination": {
+          "@EndUserText.label": "Transaction key",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SubLedgerAcctLineItemType": {
+          "@EndUserText.label": "Subledger-specific line item type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AccountingDocCreatedByUser": {
+          "@EndUserText.label": "User that created the journal entry",
+          "type": "cds.String",
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Time stamp of last change",
+          "type": "cds.Timestamp"
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Time stamp of creation",
+          "type": "cds.Timestamp"
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Creation date",
+          "type": "cds.Date"
+        },
+        "EliminationProfitCenter": {
+          "@EndUserText.label": "Elimination profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginObjectType": {
+          "@EndUserText.label": "Type of origin object",
+          "type": "cds.String",
+          "length": 2
+        },
+        "GLAccountType": {
+          "@EndUserText.label": "Type of a general ledger account",
+          "type": "cds.String",
+          "length": 1
+        },
+        "AlternativeGLAccount": {
+          "@EndUserText.label": "Alternative g/l account number in company code",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CountryChartOfAccounts": {
+          "@EndUserText.label": "Alternative chart of accounts for country/region",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ItemIsSplit": {
+          "@EndUserText.label": "Item changed by document splitting",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ConsolidationUnit": {
+          "@EndUserText.label": "Consolidation unit",
+          "type": "cds.String",
+          "length": 18
+        },
+        "PartnerConsolidationUnit": {
+          "@EndUserText.label": "Partner consolidation unit",
+          "type": "cds.String",
+          "length": 18
+        },
+        "Company": {
+          "@EndUserText.label": "Company",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ConsolidationChartOfAccounts": {
+          "@EndUserText.label": "Consolidation chart of accounts",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CnsldtnFinancialStatementItem": {
+          "@EndUserText.label": "Consolidation financial statement item",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CnsldtnSubitemCategory": {
+          "@EndUserText.label": "Consolidation subitem category",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CnsldtnSubitem": {
+          "@EndUserText.label": "Consolidation subitem",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InvoiceReference": {
+          "@EndUserText.label": "Invoice reference",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InvoiceReferenceFiscalYear": {
+          "@EndUserText.label": "Invoice reference fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FollowOnDocumentType": {
+          "@EndUserText.label": "Follow-on document type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InvoiceItemReference": {
+          "@EndUserText.label": "Invoice item reference",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReferencePurchaseOrderCategory": {
+          "@EndUserText.label": "Category of reference purchase order",
+          "type": "cds.String",
+          "length": 3
+        },
+        "PurchasingDocument": {
+          "@EndUserText.label": "Purchasing document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchasingDocumentItem": {
+          "@EndUserText.label": "Purchasing document item",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AccountAssignmentNumber": {
+          "@EndUserText.label": "Account assignment number",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DocumentItemText": {
+          "@EndUserText.label": "Item text",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SalesDocument": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDocumentItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Product": {
+          "@EndUserText.label": "Product number",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Supplier": {
+          "@EndUserText.label": "Supplier",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Customer": {
+          "@EndUserText.label": "Customer number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServicesRenderedDate": {
+          "@EndUserText.label": "Date on which services are rendered",
+          "type": "cds.Date"
+        },
+        "PerformancePeriodStartDate": {
+          "@EndUserText.label": "Billing period of performance start date",
+          "type": "cds.Date"
+        },
+        "PerformancePeriodEndDate": {
+          "@EndUserText.label": "Billing period of performance end date",
+          "type": "cds.Date"
+        },
+        "ConditionContract": {
+          "@EndUserText.label": "Condition contract",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ExchangeRateDate": {
+          "@EndUserText.label": "Translation date",
+          "type": "cds.Date"
+        },
+        "FinancialAccountType": {
+          "@EndUserText.label": "Account type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SpecialGLCode": {
+          "@EndUserText.label": "Special g/l indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TaxCode": {
+          "@EndUserText.label": "Tax on sales/purchases code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxCountry": {
+          "@EndUserText.label": "Tax reporting country/region",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HouseBank": {
+          "@EndUserText.label": "House bank key",
+          "type": "cds.String",
+          "length": 5
+        },
+        "HouseBankAccount": {
+          "@EndUserText.label": "House bank account",
+          "type": "cds.String",
+          "length": 5
+        },
+        "IsOpenItemManaged": {
+          "@EndUserText.label": "Managed on an open item basis",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ClearingDate": {
+          "@EndUserText.label": "Clearing date",
+          "type": "cds.Date"
+        },
+        "ClearingAccountingDocument": {
+          "@EndUserText.label": "Clearing journal entry (deprecated)",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ClearingDocFiscalYear": {
+          "@EndUserText.label": "Fiscal year of clearing journal entry (deprecated)",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValueDate": {
+          "@EndUserText.label": "Value date",
+          "type": "cds.Date"
+        },
+        "AssetDepreciationArea": {
+          "@EndUserText.label": "Asset depreciation area (real or derived)",
+          "type": "cds.String",
+          "length": 2
+        },
+        "MasterFixedAsset": {
+          "@EndUserText.label": "Fixed asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "FixedAsset": {
+          "@EndUserText.label": "Asset subnumber",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AssetValueDate": {
+          "@EndUserText.label": "Asset value date",
+          "type": "cds.Date"
+        },
+        "AssetTransactionType": {
+          "@EndUserText.label": "Asset transaction type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AssetAcctTransClassfctn": {
+          "@EndUserText.label": "Transaction type category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DepreciationFiscalPeriod": {
+          "@EndUserText.label": "Fiscal period of depreciation",
+          "type": "cds.String",
+          "length": 3
+        },
+        "GroupMasterFixedAsset": {
+          "@EndUserText.label": "Group asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "GroupFixedAsset": {
+          "@EndUserText.label": "Group asset subnumber",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AssetClass": {
+          "@EndUserText.label": "Asset class",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerMasterFixedAsset": {
+          "@EndUserText.label": "Partner master fixed asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerFixedAsset": {
+          "@EndUserText.label": "Partner fixed asset",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CostEstimate": {
+          "@EndUserText.label": "Cost estimate",
+          "type": "cds.String",
+          "length": 12
+        },
+        "InventorySpecialStockValnType": {
+          "@EndUserText.label": "Inventory special stock valuation type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockType": {
+          "@EndUserText.label": "Inventory special stock type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpclStkSalesDocument": {
+          "@EndUserText.label": "Inventory special stock sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InventorySpclStkSalesDocItm": {
+          "@EndUserText.label": "Inventory special stock sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "InvtrySpclStockWBSElmntIntID": {
+          "@EndUserText.label": "Inventory special stock wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "InventorySpclStockWBSElement": {
+          "@EndUserText.label": "Inventory special stock wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "InventorySpecialStockSupplier": {
+          "@EndUserText.label": "Supplier of inventory special stock",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InventoryValuationType": {
+          "@EndUserText.label": "Inventory valuation type",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValuationArea": {
+          "@EndUserText.label": "Valuation area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SenderCompanyCode": {
+          "@EndUserText.label": "Company code in sender system",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SenderGLAccount": {
+          "@EndUserText.label": "Sender g/l account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SenderAccountAssignment": {
+          "@EndUserText.label": "Sender account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "SenderAccountAssignmentType": {
+          "@EndUserText.label": "Account assignment type in sender system",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ControllingObject": {
+          "@EndUserText.label": "Controlling object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "CostOriginGroup": {
+          "@EndUserText.label": "Origin group as subdivision of cost element",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OriginSenderObject": {
+          "@EndUserText.label": "Origin sender object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "ControllingDebitCreditCode": {
+          "@EndUserText.label": "Controlling debit credit code",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OriginCtrlgDebitCreditCode": {
+          "@EndUserText.label": "Debit/credit indicator (origin)",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ControllingObjectDebitType": {
+          "@EndUserText.label": "Controlling object debit type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsIncomplete": {
+          "@EndUserText.label": "Indicator: quantity is incomplete",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OffsettingAccount": {
+          "@EndUserText.label": "Offsetting account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OffsettingAccountType": {
+          "@EndUserText.label": "Offsetting account type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OffsettingChartOfAccounts": {
+          "@EndUserText.label": "Offsetting chart of accounts",
+          "type": "cds.String",
+          "length": 4
+        },
+        "LineItemIsCompleted": {
+          "@EndUserText.label": "Indicator: line item is completed",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PersonnelNumber": {
+          "@EndUserText.label": "Personnel number",
+          "type": "cds.String",
+          "length": 8
+        },
+        "ControllingObjectClass": {
+          "@EndUserText.label": "Object class",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerCompanyCode": {
+          "@EndUserText.label": "Partner company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerControllingObjectClass": {
+          "@EndUserText.label": "Partner object class",
+          "type": "cds.String",
+          "length": 2
+        },
+        "OriginProfitCenter": {
+          "@EndUserText.label": "Origin profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginOrder": {
+          "@EndUserText.label": "Origin order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OriginCostCtrActivityType": {
+          "@EndUserText.label": "Origin cost center activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "OriginCostCenter": {
+          "@EndUserText.label": "Origin cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginProduct": {
+          "@EndUserText.label": "Origin product",
+          "type": "cds.String",
+          "length": 40
+        },
+        "VarianceOriginGLAccount": {
+          "@EndUserText.label": "Origin g/l account of a variance",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccountAssignment": {
+          "@EndUserText.label": "Account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "AccountAssignmentType": {
+          "@EndUserText.label": "Account assignment type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CostCtrActivityType": {
+          "@EndUserText.label": "Activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "OrderID": {
+          "@EndUserText.label": "Order id",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OrderCategory": {
+          "@EndUserText.label": "Order category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "WBSElement": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "PartnerWBSElementInternalID": {
+          "@EndUserText.label": "Partner wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerWBSElement": {
+          "@EndUserText.label": "Partner wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "Project": {
+          "@EndUserText.label": "Project",
+          "type": "cds.String",
+          "length": 24
+        },
+        "PartnerProjectInternalID": {
+          "@EndUserText.label": "Partner project internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerProject": {
+          "@EndUserText.label": "Partner project",
+          "type": "cds.String",
+          "length": 24
+        },
+        "OperatingConcern": {
+          "@EndUserText.label": "Operating concern",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProjectNetwork": {
+          "@EndUserText.label": "Network number for account assignment",
+          "type": "cds.String",
+          "length": 12
+        },
+        "RelatedNetworkActivity": {
+          "@EndUserText.label": "Network activity",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessProcess": {
+          "@EndUserText.label": "Business process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CostObject": {
+          "@EndUserText.label": "Cost object",
+          "type": "cds.String",
+          "length": 12
+        },
+        "BillableControl": {
+          "@EndUserText.label": "Billable control",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CostAnalysisResource": {
+          "@EndUserText.label": "Cost analysis resource",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerServiceNotification": {
+          "@EndUserText.label": "Customer service notification",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ServiceDocumentType": {
+          "@EndUserText.label": "Service document type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ServiceDocument": {
+          "@EndUserText.label": "Service document id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServiceDocumentItem": {
+          "@EndUserText.label": "Service document item id",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerServiceDocumentType": {
+          "@EndUserText.label": "Partner service document type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerServiceDocument": {
+          "@EndUserText.label": "Partner service document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerServiceDocumentItem": {
+          "@EndUserText.label": "Partner service document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ServiceContractType": {
+          "@EndUserText.label": "Service contract type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ServiceContract": {
+          "@EndUserText.label": "Service contract id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServiceContractItem": {
+          "@EndUserText.label": "Service contract item id",
+          "type": "cds.String",
+          "length": 6
+        },
+        "BusinessSolutionOrder": {
+          "@EndUserText.label": "Solution order",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessSolutionOrderItem": {
+          "@EndUserText.label": "Solution order item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ProviderContract": {
+          "@EndUserText.label": "Provider contract",
+          "type": "cds.String",
+          "length": 20
+        },
+        "ProviderContractItem": {
+          "@EndUserText.label": "Provider contract item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "RevenueAccountingContract": {
+          "@EndUserText.label": "Revenue accounting contract",
+          "type": "cds.String",
+          "length": 14
+        },
+        "PerformanceObligation": {
+          "@EndUserText.label": "Performance obligation",
+          "type": "cds.String",
+          "length": 16
+        },
+        "TimeSheetOvertimeCategory": {
+          "@EndUserText.label": "Overtime category",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerAccountAssignment": {
+          "@EndUserText.label": "Partner account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "PartnerAccountAssignmentType": {
+          "@EndUserText.label": "Partner account assignment type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "WorkPackage": {
+          "@EndUserText.label": "Plan item",
+          "type": "cds.String",
+          "length": 50
+        },
+        "WorkItem": {
+          "@EndUserText.label": "Work item id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerCostCtrActivityType": {
+          "@EndUserText.label": "Partner cost center activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerOrder": {
+          "@EndUserText.label": "Partner order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerOrderCategory": {
+          "@EndUserText.label": "Partner order category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerSalesDocument": {
+          "@EndUserText.label": "Partner sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerSalesDocumentItem": {
+          "@EndUserText.label": "Partner sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerProjectNetwork": {
+          "@EndUserText.label": "Partner project network",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerProjectNetworkActivity": {
+          "@EndUserText.label": "Partner project network activity",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerBusinessProcess": {
+          "@EndUserText.label": "Partner business process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerCostObject": {
+          "@EndUserText.label": "Partner cost object",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ControllingDocumentItem": {
+          "@EndUserText.label": "Controlling document item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "BillingDocumentType": {
+          "@EndUserText.label": "Billing type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesOrganization": {
+          "@EndUserText.label": "Sales organization",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "@EndUserText.label": "Distribution channel",
+          "type": "cds.String",
+          "length": 2
+        },
+        "OrganizationDivision": {
+          "@EndUserText.label": "Division",
+          "type": "cds.String",
+          "length": 2
+        },
+        "SoldProduct": {
+          "@EndUserText.label": "Product sold",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SoldProductGroup": {
+          "@EndUserText.label": "Product sold group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "CustomerGroup": {
+          "@EndUserText.label": "Customer group",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerSupplierCountry": {
+          "@EndUserText.label": "Customer or supplier country/region",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CustomerSupplierIndustry": {
+          "@EndUserText.label": "Customer supplier industry",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesDistrict": {
+          "@EndUserText.label": "Sales district",
+          "type": "cds.String",
+          "length": 6
+        },
+        "BillToParty": {
+          "@EndUserText.label": "Bill-to party",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ShipToParty": {
+          "@EndUserText.label": "Ship-to party",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerSupplierCorporateGroup": {
+          "@EndUserText.label": "Customer supplier corporate group",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CashLedgerCompanyCode": {
+          "@EndUserText.label": "Cash origin company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CashLedgerAccount": {
+          "@EndUserText.label": "Cash origin account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FundsCenter": {
+          "@EndUserText.label": "Funds management center",
+          "type": "cds.String",
+          "length": 16
+        },
+        "FundedProgram": {
+          "@EndUserText.label": "Funded program",
+          "type": "cds.String",
+          "length": 24
+        },
+        "Fund": {
+          "@EndUserText.label": "Fund",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GrantID": {
+          "@EndUserText.label": "Grant",
+          "type": "cds.String",
+          "length": 20
+        },
+        "BudgetPeriod": {
+          "@EndUserText.label": "Budget period",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerFund": {
+          "@EndUserText.label": "Partner fund",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerGrant": {
+          "@EndUserText.label": "Partner grant",
+          "type": "cds.String",
+          "length": 20
+        },
+        "PartnerBudgetPeriod": {
+          "@EndUserText.label": "Fm: partner budget period",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PubSecBudgetAccount": {
+          "@EndUserText.label": "Budget account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PubSecBudgetAccountCoCode": {
+          "@EndUserText.label": "Budget account company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PubSecBudgetCnsmpnDate": {
+          "@EndUserText.label": "Budget consumption date",
+          "type": "cds.Date"
+        },
+        "PubSecBudgetCnsmpnFsclPeriod": {
+          "@EndUserText.label": "Cc fiscal period for budget consumption date",
+          "type": "cds.String",
+          "length": 3
+        },
+        "PubSecBudgetCnsmpnFsclYear": {
+          "@EndUserText.label": "Cc fiscal year for budget consumption date",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PubSecBudgetIsRelevant": {
+          "@EndUserText.label": "Budget-relevant indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PubSecBudgetCnsmpnType": {
+          "@EndUserText.label": "Budget consumption type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PubSecBudgetCnsmpnAmtType": {
+          "@EndUserText.label": "Budget consumption amount type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SponsoredProgram": {
+          "@EndUserText.label": "Sponsored program",
+          "type": "cds.String",
+          "length": 20
+        },
+        "SponsoredClass": {
+          "@EndUserText.label": "Sponsored class",
+          "type": "cds.String",
+          "length": 20
+        },
+        "GteeMBudgetValidityNumber": {
+          "@EndUserText.label": "Budget validity number",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "length": 6
+        },
+        "JointVentureEquityGroup": {
+          "@EndUserText.label": "Joint venture equity group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVentureCostRecoveryCode": {
+          "@EndUserText.label": "Joint venture cost recovery code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "JointVenturePartner": {
+          "@EndUserText.label": "Joint venture partner",
+          "type": "cds.String",
+          "length": 10
+        },
+        "JointVentureBillingType": {
+          "@EndUserText.label": "Joint venture billing type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Joint venture equity type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVentureProductionDate": {
+          "@EndUserText.label": "Joint venture production date",
+          "type": "cds.Date"
+        },
+        "JointVentureBillingDate": {
+          "@EndUserText.label": "Joint venture billing date",
+          "type": "cds.Date"
+        },
+        "JointVentureOperationalDate": {
+          "@EndUserText.label": "Joint venture operational date",
+          "type": "cds.Date"
+        },
+        "JointVentureAccountingActivity": {
+          "@EndUserText.label": "Joint venture accounting activity",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerVenture": {
+          "@EndUserText.label": "Partner venture",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerEquityGroup": {
+          "@EndUserText.label": "Partner equity group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SenderCostRecoveryCode": {
+          "@EndUserText.label": "Sender cost recovery code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CutbackAccount": {
+          "@EndUserText.label": "Cutback account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CutbackCostObject": {
+          "@EndUserText.label": "Cutback cost object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "REBusinessEntity": {
+          "@EndUserText.label": "Re business entity",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateBuilding": {
+          "@EndUserText.label": "Real estate building",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateProperty": {
+          "@EndUserText.label": "Real estate property",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RERentalObject": {
+          "@EndUserText.label": "Re rental object",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateContract": {
+          "@EndUserText.label": "Real estate contract",
+          "type": "cds.String",
+          "length": 13
+        },
+        "REServiceChargeKey": {
+          "@EndUserText.label": "Re service charge key",
+          "type": "cds.String",
+          "length": 4
+        },
+        "RESettlementUnitID": {
+          "@EndUserText.label": "Re settlement unit",
+          "type": "cds.String",
+          "length": 5
+        },
+        "SettlementReferenceDate": {
+          "@EndUserText.label": "Settlement reference date",
+          "type": "cds.Date"
+        },
+        "REPartnerBusinessEntity": {
+          "@EndUserText.label": "Re partner business entity",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerBuilding": {
+          "@EndUserText.label": "Real estate partner building",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerProperty": {
+          "@EndUserText.label": "Real estate partner property",
+          "type": "cds.String",
+          "length": 8
+        },
+        "REPartnerRentalObject": {
+          "@EndUserText.label": "Re partner rental object",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerContract": {
+          "@EndUserText.label": "Real estate partner contract",
+          "type": "cds.String",
+          "length": 13
+        },
+        "REPartnerServiceChargeKey": {
+          "@EndUserText.label": "Re partner service charge key",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REPartnerSettlementUnitID": {
+          "@EndUserText.label": "Re partner settlement unit",
+          "type": "cds.String",
+          "length": 5
+        },
+        "PartnerSettlementReferenceDate": {
+          "@EndUserText.label": "Partner reference date for settlement",
+          "type": "cds.Date"
+        },
+        "AccrualObjectType": {
+          "@EndUserText.label": "Type of the accrual object",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AccrualObject": {
+          "@EndUserText.label": "Identifier of the accrual object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "AccrualSubobject": {
+          "@EndUserText.label": "Identifier of the accrual subobject",
+          "type": "cds.String",
+          "length": 32
+        },
+        "AccrualItemType": {
+          "@EndUserText.label": "Type of the item of the accrual subobject",
+          "type": "cds.String",
+          "length": 11
+        },
+        "AccrualValueDate": {
+          "@EndUserText.label": "Accrual value date",
+          "type": "cds.Date"
+        },
+        "FinancialValuationObjectType": {
+          "@EndUserText.label": "Financial valuation object type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialValuationObject": {
+          "@EndUserText.label": "Financial valuation object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "FinancialValuationSubobject": {
+          "@EndUserText.label": "Financial valuation subobject",
+          "type": "cds.String",
+          "length": 32
+        },
+        "NetDueDate": {
+          "@EndUserText.label": "Net due date",
+          "type": "cds.Date"
+        },
+        "CreditRiskClass": {
+          "@EndUserText.label": "Credit risk class",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WorkCenterInternalID": {
+          "@EndUserText.label": "Object id of the resource",
+          "type": "cds.String",
+          "length": 8
+        },
+        "OrderOperation": {
+          "@EndUserText.label": "Operation/activity number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderItem": {
+          "@EndUserText.label": "Order item number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerOrderItem": {
+          "@EndUserText.label": "Partner order item number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderSuboperation": {
+          "@EndUserText.label": "Suboperation",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Equipment": {
+          "@EndUserText.label": "Equipment number",
+          "type": "cds.String",
+          "length": 18
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "length": 30
+        },
+        "Assembly": {
+          "@EndUserText.label": "Assembly",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MaintenanceActivityType": {
+          "@EndUserText.label": "Maintenance activity type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "MaintenanceOrderPlanningCode": {
+          "@EndUserText.label": "Maintenance order planning indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "MaintPriorityType": {
+          "@EndUserText.label": "Priority type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "MaintPriority": {
+          "@EndUserText.label": "Priority",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SuperiorOrder": {
+          "@EndUserText.label": "Number of superior order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ProductGroup": {
+          "@EndUserText.label": "Product group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "MaintenanceOrderIsPlanned": {
+          "@EndUserText.label": "Planned parts/work",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntryItemMigrationSource": {
+          "@EndUserText.label": "Journal entry item migration source",
+          "type": "cds.String",
+          "length": 1
+        },
+        "AccountingNotificationUUID": {
+          "@EndUserText.label": "Accounting notification uuid",
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "OffsettingLedgerGLLineItem": {
+          "@EndUserText.label": "General ledger offsetting entry line item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReversalReferenceDocumentType": {
+          "@EndUserText.label": "Reversal reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "FixedAmountInTransCrcy": {
+          "@EndUserText.label": "Fixed amount in transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "IncmpltSummableValnQtyUnt": {
+          "@EndUserText.label": "Incomplete summable valuation quantity unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncmpltSummableValnQty": {
+          "@EndUserText.label": "Incomplete summable valuation quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "IncmpltSummableValnFxdQty": {
+          "@EndUserText.label": "Incomplete summable valuation fix quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "JournalEntryItemCategory": {
+          "@EndUserText.label": "Journal entry item category",
+          "type": "cds.String",
+          "length": 5
+        },
+        "ComponentBreakdown": {
+          "@EndUserText.label": "Component breakdown",
+          "type": "cds.String",
+          "length": 16
+        },
+        "CompBreakdownScaleNumerator": {
+          "@EndUserText.label": "Component breakdown scale numerator",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ClearingJournalEntryFiscalYear": {
+          "@EndUserText.label": "Fiscal year of clearing journal entry",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ClearingJournalEntry": {
+          "@EndUserText.label": "Clearing journal entry",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GeneralLedgerAgingScope": {
+          "@EndUserText.label": "General ledger aging scope",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GeneralLedgerAgingIncrement": {
+          "@EndUserText.label": "General ledger aging increment",
+          "type": "cds.String",
+          "length": 15
+        },
+        "IsSupplierStockValuation": {
+          "@EndUserText.label": "Is supplier stock valuation",
+          "type": "cds.String",
+          "length": 1
+        },
+        "MaterialLedgerProcessType": {
+          "@EndUserText.label": "Material ledger process type (procurement/consumption)",
+          "type": "cds.String",
+          "length": 4
+        },
+        "MaterialLedgerCategory": {
+          "@EndUserText.label": "Category in material ledger update structure",
+          "type": "cds.String",
+          "length": 2
+        },
+        "SlsPriceAmountInCoCodeCrcy": {
+          "@EndUserText.label": "Sales price amount in company code currency",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductPriceControl": {
+          "@EndUserText.label": "Product price control indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProcurementAlternative": {
+          "@EndUserText.label": "Procurement alternative",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ProductionProcess": {
+          "@EndUserText.label": "Production process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "StstclAccountAssignmentType1": {
+          "@EndUserText.label": "Statistical account assignment type 1",
+          "type": "cds.String",
+          "length": 2
+        },
+        "StstclAccountAssignmentType2": {
+          "@EndUserText.label": "Statistical account assignment type 2",
+          "type": "cds.String",
+          "length": 2
+        },
+        "StstclAccountAssignmentType3": {
+          "@EndUserText.label": "Statistical account assignment type 3",
+          "type": "cds.String",
+          "length": 2
+        },
+        "VarianceOriginGroup": {
+          "@EndUserText.label": "Variance origin group",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CommitmentItem": {
+          "@EndUserText.label": "Commitment item",
+          "type": "cds.String",
+          "length": 24
+        },
+        "EarmarkedFundsDocument": {
+          "@EndUserText.label": "Earmarked funds document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "EarmarkedFundsDocumentItem": {
+          "@EndUserText.label": "Earmarked funds document item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FinancialServicesProductGroup": {
+          "@EndUserText.label": "Financial services product group",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialServicesBranch": {
+          "@EndUserText.label": "Financial services branch",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialDataSource": {
+          "@EndUserText.label": "Financial data source",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccrualObjectLogicalSystem": {
+          "@EndUserText.label": "Logical system of the accrual object",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccrualReferenceObject": {
+          "@EndUserText.label": "Accrual reference object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "OriginOrderOperation": {
+          "@EndUserText.label": "Origin order operation",
+          "type": "cds.String",
+          "length": 4
+        },
+        "JournalEntryIsSecondaryEntry": {
+          "@EndUserText.label": "Journal entry is secondary entry",
+          "type": "cds.String",
+          "length": 1
+        }
+      },
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "02_DWH_LT_UNIVERSALLEDGER_Delta"
+        ]
+      },
+      "@EndUserText.label": "02 DWH LT Universal Ledger",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "02_DWH_LT_UNIVERSALLEDGER_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "SourceLedger"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "LedgerGLLineItem"
+              ]
+            },
+            {
+              "ref": [
+                "LedgerFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "GLRecordType"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntrAltvFYConsecutiveID"
+              ]
+            },
+            {
+              "ref": [
+                "ChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingArea"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialTransactionType"
+              ]
+            },
+            {
+              "ref": [
+                "GLBusinessTransactionType"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessTransactionCategory"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessTransactionType"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialClosingStep"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingBusTransacType"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "LogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentContext"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentItemGroup"
+              ]
+            },
+            {
+              "ref": [
+                "TransactionSubitem"
+              ]
+            },
+            {
+              "ref": [
+                "IsReversal"
+              ]
+            },
+            {
+              "ref": [
+                "IsReversed"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReferenceDocumentCntxt"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalTransactionSubitem"
+              ]
+            },
+            {
+              "ref": [
+                "IsSettlement"
+              ]
+            },
+            {
+              "ref": [
+                "IsSettled"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorReferenceDocType"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorReferenceDocCntxt"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorReferenceDocItem"
+              ]
+            },
+            {
+              "ref": [
+                "PrdcssrJournalEntryCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "PrdcssrJournalEntryFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorJournalEntry"
+              ]
+            },
+            {
+              "ref": [
+                "PredecessorJournalEntryItem"
+              ]
+            },
+            {
+              "ref": [
+                "SourceReferenceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "SourceLogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "SourceReferenceDocumentCntxt"
+              ]
+            },
+            {
+              "ref": [
+                "SourceReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "SourceReferenceDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "SourceReferenceDocSubitem"
+              ]
+            },
+            {
+              "ref": [
+                "IsCommitment"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryItemObsoleteReason"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlPeriodEndClosingRunLogUUID"
+              ]
+            },
+            {
+              "ref": [
+                "OrganizationalChange"
+              ]
+            },
+            {
+              "ref": [
+                "GLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessArea"
+              ]
+            },
+            {
+              "ref": [
+                "Segment"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerFunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerBusinessArea"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerCompany"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerSegment"
+              ]
+            },
+            {
+              "ref": [
+                "BalanceTransactionCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInBalanceTransacCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "TransactionCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInTransactionCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCodeCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInCompanyCodeCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "GlobalCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInGlobalCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFunctionalCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency1"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency1"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency2"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency2"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency3"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency3"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency4"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency4"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency5"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency5"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency6"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency6"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency7"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency7"
+              ]
+            },
+            {
+              "ref": [
+                "FreeDefinedCurrency8"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInFreeDefinedCurrency8"
+              ]
+            },
+            {
+              "ref": [
+                "FixedAmountInGlobalCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "GrpValnFixedAmtInGlobCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "PrftCtrValnFxdAmtInGlobCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "FixedAmountInCoCodeCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "TotalPriceVarcInGlobalCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "GrpValnTotPrcVarcInGlobCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "PrftCtrValnTotPrcVarcInGlbCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "FixedPriceVarcInGlobalCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "GrpValnFixedPrcVarcInGlobCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "PrftCtrValnFxdPrcVarcInGlbCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingObjectCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInObjectCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "GrantCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AmountInGrantCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "BaseUnit"
+              ]
+            },
+            {
+              "ref": [
+                "Quantity"
+              ]
+            },
+            {
+              "ref": [
+                "FixedQuantity"
+              ]
+            },
+            {
+              "ref": [
+                "CostSourceUnit"
+              ]
+            },
+            {
+              "ref": [
+                "ValuationQuantity"
+              ]
+            },
+            {
+              "ref": [
+                "ValuationFixedQuantity"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceQuantityUnit"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceQuantity"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity1Unit"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity1"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity2Unit"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity2"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity3Unit"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalQuantity3"
+              ]
+            },
+            {
+              "ref": [
+                "DebitCreditCode"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearVariant"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "PostingDate"
+              ]
+            },
+            {
+              "ref": [
+                "DocumentDate"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "AssignmentReference"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentCategory"
+              ]
+            },
+            {
+              "ref": [
+                "PostingKey"
+              ]
+            },
+            {
+              "ref": [
+                "TransactionTypeDetermination"
+              ]
+            },
+            {
+              "ref": [
+                "SubLedgerAcctLineItemType"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocCreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangeDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDate"
+              ]
+            },
+            {
+              "ref": [
+                "EliminationProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "OriginObjectType"
+              ]
+            },
+            {
+              "ref": [
+                "GLAccountType"
+              ]
+            },
+            {
+              "ref": [
+                "AlternativeGLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "CountryChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "ItemIsSplit"
+              ]
+            },
+            {
+              "ref": [
+                "ConsolidationUnit"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerConsolidationUnit"
+              ]
+            },
+            {
+              "ref": [
+                "Company"
+              ]
+            },
+            {
+              "ref": [
+                "ConsolidationChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "CnsldtnFinancialStatementItem"
+              ]
+            },
+            {
+              "ref": [
+                "CnsldtnSubitemCategory"
+              ]
+            },
+            {
+              "ref": [
+                "CnsldtnSubitem"
+              ]
+            },
+            {
+              "ref": [
+                "InvoiceReference"
+              ]
+            },
+            {
+              "ref": [
+                "InvoiceReferenceFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "FollowOnDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "InvoiceItemReference"
+              ]
+            },
+            {
+              "ref": [
+                "ReferencePurchaseOrderCategory"
+              ]
+            },
+            {
+              "ref": [
+                "PurchasingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "PurchasingDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "AccountAssignmentNumber"
+              ]
+            },
+            {
+              "ref": [
+                "DocumentItemText"
+              ]
+            },
+            {
+              "ref": [
+                "SalesDocument"
+              ]
+            },
+            {
+              "ref": [
+                "SalesDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "Product"
+              ]
+            },
+            {
+              "ref": [
+                "Plant"
+              ]
+            },
+            {
+              "ref": [
+                "Supplier"
+              ]
+            },
+            {
+              "ref": [
+                "Customer"
+              ]
+            },
+            {
+              "ref": [
+                "ServicesRenderedDate"
+              ]
+            },
+            {
+              "ref": [
+                "PerformancePeriodStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "PerformancePeriodEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "ConditionContract"
+              ]
+            },
+            {
+              "ref": [
+                "ExchangeRateDate"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialAccountType"
+              ]
+            },
+            {
+              "ref": [
+                "SpecialGLCode"
+              ]
+            },
+            {
+              "ref": [
+                "TaxCode"
+              ]
+            },
+            {
+              "ref": [
+                "TaxCountry"
+              ]
+            },
+            {
+              "ref": [
+                "HouseBank"
+              ]
+            },
+            {
+              "ref": [
+                "HouseBankAccount"
+              ]
+            },
+            {
+              "ref": [
+                "IsOpenItemManaged"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingDate"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingAccountingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingDocFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "ValueDate"
+              ]
+            },
+            {
+              "ref": [
+                "AssetDepreciationArea"
+              ]
+            },
+            {
+              "ref": [
+                "MasterFixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "FixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "AssetValueDate"
+              ]
+            },
+            {
+              "ref": [
+                "AssetTransactionType"
+              ]
+            },
+            {
+              "ref": [
+                "AssetAcctTransClassfctn"
+              ]
+            },
+            {
+              "ref": [
+                "DepreciationFiscalPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "GroupMasterFixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "GroupFixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "AssetClass"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerMasterFixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerFixedAsset"
+              ]
+            },
+            {
+              "ref": [
+                "CostEstimate"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpecialStockValnType"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpecialStockType"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpclStkSalesDocument"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpclStkSalesDocItm"
+              ]
+            },
+            {
+              "ref": [
+                "InvtrySpclStockWBSElmntIntID"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpclStockWBSElement"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpecialStockSupplier"
+              ]
+            },
+            {
+              "ref": [
+                "InventoryValuationType"
+              ]
+            },
+            {
+              "ref": [
+                "ValuationArea"
+              ]
+            },
+            {
+              "ref": [
+                "SenderCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "SenderGLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "SenderAccountAssignment"
+              ]
+            },
+            {
+              "ref": [
+                "SenderAccountAssignmentType"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingObject"
+              ]
+            },
+            {
+              "ref": [
+                "CostOriginGroup"
+              ]
+            },
+            {
+              "ref": [
+                "OriginSenderObject"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingDebitCreditCode"
+              ]
+            },
+            {
+              "ref": [
+                "OriginCtrlgDebitCreditCode"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingObjectDebitType"
+              ]
+            },
+            {
+              "ref": [
+                "QuantityIsIncomplete"
+              ]
+            },
+            {
+              "ref": [
+                "OffsettingAccount"
+              ]
+            },
+            {
+              "ref": [
+                "OffsettingAccountType"
+              ]
+            },
+            {
+              "ref": [
+                "OffsettingChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "LineItemIsCompleted"
+              ]
+            },
+            {
+              "ref": [
+                "PersonnelNumber"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingObjectClass"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerControllingObjectClass"
+              ]
+            },
+            {
+              "ref": [
+                "OriginProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "OriginOrder"
+              ]
+            },
+            {
+              "ref": [
+                "OriginCostCtrActivityType"
+              ]
+            },
+            {
+              "ref": [
+                "OriginCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "OriginProduct"
+              ]
+            },
+            {
+              "ref": [
+                "VarianceOriginGLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "AccountAssignment"
+              ]
+            },
+            {
+              "ref": [
+                "AccountAssignmentType"
+              ]
+            },
+            {
+              "ref": [
+                "CostCtrActivityType"
+              ]
+            },
+            {
+              "ref": [
+                "OrderID"
+              ]
+            },
+            {
+              "ref": [
+                "OrderCategory"
+              ]
+            },
+            {
+              "ref": [
+                "WBSElementInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "WBSElement"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerWBSElementInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerWBSElement"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "Project"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerProjectInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerProject"
+              ]
+            },
+            {
+              "ref": [
+                "OperatingConcern"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectNetwork"
+              ]
+            },
+            {
+              "ref": [
+                "RelatedNetworkActivity"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessProcess"
+              ]
+            },
+            {
+              "ref": [
+                "CostObject"
+              ]
+            },
+            {
+              "ref": [
+                "BillableControl"
+              ]
+            },
+            {
+              "ref": [
+                "CostAnalysisResource"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerServiceNotification"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerServiceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerServiceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerServiceDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceContractType"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceContract"
+              ]
+            },
+            {
+              "ref": [
+                "ServiceContractItem"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessSolutionOrder"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessSolutionOrderItem"
+              ]
+            },
+            {
+              "ref": [
+                "ProviderContract"
+              ]
+            },
+            {
+              "ref": [
+                "ProviderContractItem"
+              ]
+            },
+            {
+              "ref": [
+                "RevenueAccountingContract"
+              ]
+            },
+            {
+              "ref": [
+                "PerformanceObligation"
+              ]
+            },
+            {
+              "ref": [
+                "TimeSheetOvertimeCategory"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerAccountAssignment"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerAccountAssignmentType"
+              ]
+            },
+            {
+              "ref": [
+                "WorkPackage"
+              ]
+            },
+            {
+              "ref": [
+                "WorkItem"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerCostCtrActivityType"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerOrder"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerOrderCategory"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerSalesDocument"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerSalesDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerProjectNetwork"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerProjectNetworkActivity"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerBusinessProcess"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerCostObject"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "BillingDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "SalesOrganization"
+              ]
+            },
+            {
+              "ref": [
+                "DistributionChannel"
+              ]
+            },
+            {
+              "ref": [
+                "OrganizationDivision"
+              ]
+            },
+            {
+              "ref": [
+                "SoldProduct"
+              ]
+            },
+            {
+              "ref": [
+                "SoldProductGroup"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerGroup"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerSupplierCountry"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerSupplierIndustry"
+              ]
+            },
+            {
+              "ref": [
+                "SalesDistrict"
+              ]
+            },
+            {
+              "ref": [
+                "BillToParty"
+              ]
+            },
+            {
+              "ref": [
+                "ShipToParty"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerSupplierCorporateGroup"
+              ]
+            },
+            {
+              "ref": [
+                "CashLedgerCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "CashLedgerAccount"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialManagementArea"
+              ]
+            },
+            {
+              "ref": [
+                "FundsCenter"
+              ]
+            },
+            {
+              "ref": [
+                "FundedProgram"
+              ]
+            },
+            {
+              "ref": [
+                "Fund"
+              ]
+            },
+            {
+              "ref": [
+                "GrantID"
+              ]
+            },
+            {
+              "ref": [
+                "BudgetPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerFund"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerGrant"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerBudgetPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetAccount"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetAccountCoCode"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetCnsmpnDate"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetCnsmpnFsclPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetCnsmpnFsclYear"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetIsRelevant"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetCnsmpnType"
+              ]
+            },
+            {
+              "ref": [
+                "PubSecBudgetCnsmpnAmtType"
+              ]
+            },
+            {
+              "ref": [
+                "SponsoredProgram"
+              ]
+            },
+            {
+              "ref": [
+                "SponsoredClass"
+              ]
+            },
+            {
+              "ref": [
+                "GteeMBudgetValidityNumber"
+              ]
+            },
+            {
+              "ref": [
+                "JointVenture"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureEquityGroup"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureCostRecoveryCode"
+              ]
+            },
+            {
+              "ref": [
+                "JointVenturePartner"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureBillingType"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureEquityType"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureProductionDate"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureBillingDate"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureOperationalDate"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureAccountingActivity"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerVenture"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerEquityGroup"
+              ]
+            },
+            {
+              "ref": [
+                "SenderCostRecoveryCode"
+              ]
+            },
+            {
+              "ref": [
+                "CutbackAccount"
+              ]
+            },
+            {
+              "ref": [
+                "CutbackCostObject"
+              ]
+            },
+            {
+              "ref": [
+                "REBusinessEntity"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstateBuilding"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstateProperty"
+              ]
+            },
+            {
+              "ref": [
+                "RERentalObject"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstateContract"
+              ]
+            },
+            {
+              "ref": [
+                "REServiceChargeKey"
+              ]
+            },
+            {
+              "ref": [
+                "RESettlementUnitID"
+              ]
+            },
+            {
+              "ref": [
+                "SettlementReferenceDate"
+              ]
+            },
+            {
+              "ref": [
+                "REPartnerBusinessEntity"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstatePartnerBuilding"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstatePartnerProperty"
+              ]
+            },
+            {
+              "ref": [
+                "REPartnerRentalObject"
+              ]
+            },
+            {
+              "ref": [
+                "RealEstatePartnerContract"
+              ]
+            },
+            {
+              "ref": [
+                "REPartnerServiceChargeKey"
+              ]
+            },
+            {
+              "ref": [
+                "REPartnerSettlementUnitID"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerSettlementReferenceDate"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualObjectType"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualObject"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualSubobject"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualItemType"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualValueDate"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialValuationObjectType"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialValuationObject"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialValuationSubobject"
+              ]
+            },
+            {
+              "ref": [
+                "NetDueDate"
+              ]
+            },
+            {
+              "ref": [
+                "CreditRiskClass"
+              ]
+            },
+            {
+              "ref": [
+                "WorkCenterInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "OrderOperation"
+              ]
+            },
+            {
+              "ref": [
+                "OrderItem"
+              ]
+            },
+            {
+              "ref": [
+                "PartnerOrderItem"
+              ]
+            },
+            {
+              "ref": [
+                "OrderSuboperation"
+              ]
+            },
+            {
+              "ref": [
+                "Equipment"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalLocation"
+              ]
+            },
+            {
+              "ref": [
+                "Assembly"
+              ]
+            },
+            {
+              "ref": [
+                "MaintenanceActivityType"
+              ]
+            },
+            {
+              "ref": [
+                "MaintenanceOrderPlanningCode"
+              ]
+            },
+            {
+              "ref": [
+                "MaintPriorityType"
+              ]
+            },
+            {
+              "ref": [
+                "MaintPriority"
+              ]
+            },
+            {
+              "ref": [
+                "SuperiorOrder"
+              ]
+            },
+            {
+              "ref": [
+                "ProductGroup"
+              ]
+            },
+            {
+              "ref": [
+                "MaintenanceOrderIsPlanned"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryItemMigrationSource"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingNotificationUUID"
+              ]
+            },
+            {
+              "ref": [
+                "OffsettingLedgerGLLineItem"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReferenceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "FixedAmountInTransCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "IncmpltSummableValnQtyUnt"
+              ]
+            },
+            {
+              "ref": [
+                "IncmpltSummableValnQty"
+              ]
+            },
+            {
+              "ref": [
+                "IncmpltSummableValnFxdQty"
+              ]
+            },
+            {
+              "ref": [
+                "JournalEntryItemCategory"
+              ]
+            },
+            {
+              "ref": [
+                "ComponentBreakdown"
+              ]
+            },
+            {
+              "ref": [
+                "CompBreakdownScaleNumerator"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingJournalEntryFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingJournalEntry"
+              ]
+            },
+            {
+              "ref": [
+                "GeneralLedgerAgingScope"
+              ]
+            },
+            {
+              "ref": [
+                "GeneralLedgerAgingIncrement"
+              ]
+            },
+            {
+              "ref": [
+                "IsSupplierStockValuation"
+              ]
+            },
+            {
+              "ref": [
+                "MaterialLedgerProcessType"
+              ]
+            },
+            {
+              "ref": [
+                "MaterialLedgerCategory"
+              ]
+            },
+            {
+              "ref": [
+                "SlsPriceAmountInCoCodeCrcy"
+              ]
+            },
+            {
+              "ref": [
+                "ProductPriceControl"
+              ]
+            },
+            {
+              "ref": [
+                "ProcurementAlternative"
+              ]
+            },
+            {
+              "ref": [
+                "ProductionProcess"
+              ]
+            },
+            {
+              "ref": [
+                "StstclAccountAssignmentType1"
+              ]
+            },
+            {
+              "ref": [
+                "StstclAccountAssignmentType2"
+              ]
+            },
+            {
+              "ref": [
+                "StstclAccountAssignmentType3"
+              ]
+            },
+            {
+              "ref": [
+                "VarianceOriginGroup"
+              ]
+            },
+            {
+              "ref": [
+                "CommitmentItem"
+              ]
+            },
+            {
+              "ref": [
+                "EarmarkedFundsDocument"
+              ]
+            },
+            {
+              "ref": [
+                "EarmarkedFundsDocumentItem"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialServicesProductGroup"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialServicesBranch"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialDataSource"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualObjectLogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "AccrualReferenceObject"
+              ]
+            },
+            {
+              "ref": [
+                "OriginOrderOperation"
+              ]
+            },
+            {
+              "ref": [
+                "JournalEntryIsSecondaryEntry"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_GBBAYFPX"
+        }
+      }
+    },
+    "02_DWH_LT_UNIVERSALLEDGER_Delta": {
+      "kind": "entity",
+      "elements": {
+        "SourceLedger": {
+          "@EndUserText.label": "Source ledger",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "AccountingDocument": {
+          "@EndUserText.label": "Journal entry",
+          "type": "cds.String",
+          "length": 10,
+          "key": true,
+          "notNull": true
+        },
+        "LedgerGLLineItem": {
+          "@EndUserText.label": "Ledger journal entry item",
+          "type": "cds.String",
+          "length": 6,
+          "key": true,
+          "notNull": true
+        },
+        "LedgerFiscalYear": {
+          "@EndUserText.label": "Ledger fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "GLRecordType": {
+          "@EndUserText.label": "Record type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntrAltvFYConsecutiveID": {
+          "@EndUserText.label": "Shifted fiscal year consecutive id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialTransactionType": {
+          "@EndUserText.label": "Financial transaction type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "GLBusinessTransactionType": {
+          "@EndUserText.label": "Transaction type for general ledger",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessTransactionCategory": {
+          "@EndUserText.label": "Business transaction category",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessTransactionType": {
+          "@EndUserText.label": "Business transaction type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialClosingStep": {
+          "@EndUserText.label": "Financial closing step",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ControllingBusTransacType": {
+          "@EndUserText.label": "Co business transaction",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReferenceDocumentType": {
+          "@EndUserText.label": "Reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocumentContext": {
+          "@EndUserText.label": "Reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocument": {
+          "@EndUserText.label": "Reference document number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceDocumentItem": {
+          "@EndUserText.label": "Reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReferenceDocumentItemGroup": {
+          "@EndUserText.label": "Reference document item group",
+          "type": "cds.String",
+          "length": 6
+        },
+        "TransactionSubitem": {
+          "@EndUserText.label": "Partial document to be balanced to zero",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsReversal": {
+          "@EndUserText.label": "Indicator: item is reversing another item",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsReversed": {
+          "@EndUserText.label": "Indicator: item is reversed",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ReversalReferenceDocumentCntxt": {
+          "@EndUserText.label": "Reversal reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReversalReferenceDocument": {
+          "@EndUserText.label": "Reversal reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReversalTransactionSubitem": {
+          "@EndUserText.label": "Reversal transaction sub item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsSettlement": {
+          "@EndUserText.label": "Indicator: item is settling or transferring another item",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSettled": {
+          "@EndUserText.label": "Indicator: line item is settled or transferred",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PredecessorReferenceDocType": {
+          "@EndUserText.label": "Predecessor reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "PredecessorReferenceDocCntxt": {
+          "@EndUserText.label": "Predecessor reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorReferenceDocument": {
+          "@EndUserText.label": "Predecessor reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorReferenceDocItem": {
+          "@EndUserText.label": "Predecessor reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PrdcssrJournalEntryCompanyCode": {
+          "@EndUserText.label": "Preceding journal entry company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PrdcssrJournalEntryFiscalYear": {
+          "@EndUserText.label": "Preceding journal entry fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PredecessorJournalEntry": {
+          "@EndUserText.label": "Preceding journal entry document number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PredecessorJournalEntryItem": {
+          "@EndUserText.label": "Preceding journal entry line item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SourceReferenceDocumentType": {
+          "@EndUserText.label": "Source reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "SourceLogicalSystem": {
+          "@EndUserText.label": "Source logical system",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocumentCntxt": {
+          "@EndUserText.label": "Source reference document context",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocument": {
+          "@EndUserText.label": "Source reference document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SourceReferenceDocumentItem": {
+          "@EndUserText.label": "Source reference document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SourceReferenceDocSubitem": {
+          "@EndUserText.label": "Source reference document subitem",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IsCommitment": {
+          "@EndUserText.label": "Indicator: is commitment",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntryItemObsoleteReason": {
+          "@EndUserText.label": "Journal entry item obsolete reason",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlPeriodEndClosingRunLogUUID": {
+          "@EndUserText.label": "Uuid of financial closing run",
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "OrganizationalChange": {
+          "@EndUserText.label": "Organizational change",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GLAccount": {
+          "@EndUserText.label": "G/l account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "length": 16
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Segment": {
+          "@EndUserText.label": "Segment for segmental reporting",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerCostCenter": {
+          "@EndUserText.label": "Partner cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerProfitCenter": {
+          "@EndUserText.label": "Partner profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerFunctionalArea": {
+          "@EndUserText.label": "Partner functional area",
+          "type": "cds.String",
+          "length": 16
+        },
+        "PartnerBusinessArea": {
+          "@EndUserText.label": "Partner business area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerCompany": {
+          "@EndUserText.label": "Company id of trading partner",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerSegment": {
+          "@EndUserText.label": "Partner segment for segmental reporting",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BalanceTransactionCurrency": {
+          "@EndUserText.label": "Balance transaction currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInBalanceTransacCrcy": {
+          "@EndUserText.label": "Amount in balance transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "TransactionCurrency": {
+          "@EndUserText.label": "Transaction currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInTransactionCurrency": {
+          "@EndUserText.label": "Amount in transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "CompanyCodeCurrency": {
+          "@EndUserText.label": "Company code currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInCompanyCodeCurrency": {
+          "@EndUserText.label": "Amount in company code currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GlobalCurrency": {
+          "@EndUserText.label": "Global currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInGlobalCurrency": {
+          "@EndUserText.label": "Amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FunctionalCurrency": {
+          "@EndUserText.label": "Functional currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFunctionalCurrency": {
+          "@EndUserText.label": "Amount in functional currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency1": {
+          "@EndUserText.label": "Freely defined currency 1",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency1": {
+          "@EndUserText.label": "Amount in freely defined currency 1",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency2": {
+          "@EndUserText.label": "Freely defined currency 2",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency2": {
+          "@EndUserText.label": "Amount in freely defined currency 2",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency3": {
+          "@EndUserText.label": "Freely defined currency 3",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency3": {
+          "@EndUserText.label": "Amount in freely defined currency 3",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency4": {
+          "@EndUserText.label": "Freely defined currency 4",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency4": {
+          "@EndUserText.label": "Amount in freely defined currency 4",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency5": {
+          "@EndUserText.label": "Freely defined currency 5",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency5": {
+          "@EndUserText.label": "Amount in freely defined currency 5",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency6": {
+          "@EndUserText.label": "Freely defined currency 6",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency6": {
+          "@EndUserText.label": "Amount in freely defined currency 6",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency7": {
+          "@EndUserText.label": "Freely defined currency 7",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency7": {
+          "@EndUserText.label": "Amount in freely defined currency 7",
+          "type": "cds.DecimalFloat"
+        },
+        "FreeDefinedCurrency8": {
+          "@EndUserText.label": "Freely defined currency 8",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInFreeDefinedCurrency8": {
+          "@EndUserText.label": "Amount in freely defined currency 8",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedAmountInGlobalCrcy": {
+          "@EndUserText.label": "Fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnFixedAmtInGlobCrcy": {
+          "@EndUserText.label": "Group valuation fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnFxdAmtInGlobCrcy": {
+          "@EndUserText.label": "Profit center valuation fixed amount in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedAmountInCoCodeCrcy": {
+          "@EndUserText.label": "Fixed amount in company currency",
+          "type": "cds.DecimalFloat"
+        },
+        "TotalPriceVarcInGlobalCrcy": {
+          "@EndUserText.label": "Total price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnTotPrcVarcInGlobCrcy": {
+          "@EndUserText.label": "Group valuation total price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnTotPrcVarcInGlbCrcy": {
+          "@EndUserText.label": "Profit center valuation total price variance in global cur.",
+          "type": "cds.DecimalFloat"
+        },
+        "FixedPriceVarcInGlobalCrcy": {
+          "@EndUserText.label": "Fixed price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrpValnFixedPrcVarcInGlobCrcy": {
+          "@EndUserText.label": "Group valuation fixed price variance in global currency",
+          "type": "cds.DecimalFloat"
+        },
+        "PrftCtrValnFxdPrcVarcInGlbCrcy": {
+          "@EndUserText.label": "Profit center valuation fixed price variance in global cur.",
+          "type": "cds.DecimalFloat"
+        },
+        "ControllingObjectCurrency": {
+          "@EndUserText.label": "Co object currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInObjectCurrency": {
+          "@EndUserText.label": "Amount in object currency",
+          "type": "cds.DecimalFloat"
+        },
+        "GrantCurrency": {
+          "@EndUserText.label": "Grant currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AmountInGrantCurrency": {
+          "@EndUserText.label": "Grant amount in grant currency",
+          "type": "cds.DecimalFloat"
+        },
+        "BaseUnit": {
+          "@EndUserText.label": "Base unit of measure",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Quantity": {
+          "@EndUserText.label": "Quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "FixedQuantity": {
+          "@EndUserText.label": "Fixed quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "CostSourceUnit": {
+          "@EndUserText.label": "Cost source unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ValuationQuantity": {
+          "@EndUserText.label": "Valuation quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ValuationFixedQuantity": {
+          "@EndUserText.label": "Valuation fixed quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ReferenceQuantityUnit": {
+          "@EndUserText.label": "Unit of measure for reference quantity",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReferenceQuantity": {
+          "@EndUserText.label": "Reference quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity1Unit": {
+          "@EndUserText.label": "Additional quantity 1 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity1": {
+          "@EndUserText.label": "Additional quantity 1",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity2Unit": {
+          "@EndUserText.label": "Additional quantity 2 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity2": {
+          "@EndUserText.label": "Additional quantity 2",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "AdditionalQuantity3Unit": {
+          "@EndUserText.label": "Additional quantity 3 unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalQuantity3": {
+          "@EndUserText.label": "Additional quantity 3",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "DebitCreditCode": {
+          "@EndUserText.label": "Debit/credit code",
+          "type": "cds.String",
+          "length": 1
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FiscalYearPeriod": {
+          "@EndUserText.label": "Fiscal year period",
+          "type": "cds.String",
+          "length": 7
+        },
+        "PostingDate": {
+          "@EndUserText.label": "Posting date",
+          "type": "cds.Date"
+        },
+        "DocumentDate": {
+          "@EndUserText.label": "Journal entry date",
+          "type": "cds.Date"
+        },
+        "AccountingDocumentType": {
+          "@EndUserText.label": "Journal entry type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountingDocumentItem": {
+          "@EndUserText.label": "Journal entry posting view item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AssignmentReference": {
+          "@EndUserText.label": "Assignment reference",
+          "type": "cds.String",
+          "length": 18
+        },
+        "AccountingDocumentCategory": {
+          "@EndUserText.label": "Journal entry category",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PostingKey": {
+          "@EndUserText.label": "Posting key",
+          "type": "cds.String",
+          "length": 2
+        },
+        "TransactionTypeDetermination": {
+          "@EndUserText.label": "Transaction key",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SubLedgerAcctLineItemType": {
+          "@EndUserText.label": "Subledger-specific line item type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AccountingDocCreatedByUser": {
+          "@EndUserText.label": "User that created the journal entry",
+          "type": "cds.String",
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Time stamp of last change",
+          "type": "cds.Timestamp"
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Time stamp of creation",
+          "type": "cds.Timestamp"
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Creation date",
+          "type": "cds.Date"
+        },
+        "EliminationProfitCenter": {
+          "@EndUserText.label": "Elimination profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginObjectType": {
+          "@EndUserText.label": "Type of origin object",
+          "type": "cds.String",
+          "length": 2
+        },
+        "GLAccountType": {
+          "@EndUserText.label": "Type of a general ledger account",
+          "type": "cds.String",
+          "length": 1
+        },
+        "AlternativeGLAccount": {
+          "@EndUserText.label": "Alternative g/l account number in company code",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CountryChartOfAccounts": {
+          "@EndUserText.label": "Alternative chart of accounts for country/region",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ItemIsSplit": {
+          "@EndUserText.label": "Item changed by document splitting",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ConsolidationUnit": {
+          "@EndUserText.label": "Consolidation unit",
+          "type": "cds.String",
+          "length": 18
+        },
+        "PartnerConsolidationUnit": {
+          "@EndUserText.label": "Partner consolidation unit",
+          "type": "cds.String",
+          "length": 18
+        },
+        "Company": {
+          "@EndUserText.label": "Company",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ConsolidationChartOfAccounts": {
+          "@EndUserText.label": "Consolidation chart of accounts",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CnsldtnFinancialStatementItem": {
+          "@EndUserText.label": "Consolidation financial statement item",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CnsldtnSubitemCategory": {
+          "@EndUserText.label": "Consolidation subitem category",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CnsldtnSubitem": {
+          "@EndUserText.label": "Consolidation subitem",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InvoiceReference": {
+          "@EndUserText.label": "Invoice reference",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InvoiceReferenceFiscalYear": {
+          "@EndUserText.label": "Invoice reference fiscal year",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FollowOnDocumentType": {
+          "@EndUserText.label": "Follow-on document type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InvoiceItemReference": {
+          "@EndUserText.label": "Invoice item reference",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ReferencePurchaseOrderCategory": {
+          "@EndUserText.label": "Category of reference purchase order",
+          "type": "cds.String",
+          "length": 3
+        },
+        "PurchasingDocument": {
+          "@EndUserText.label": "Purchasing document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchasingDocumentItem": {
+          "@EndUserText.label": "Purchasing document item",
+          "type": "cds.String",
+          "length": 5
+        },
+        "AccountAssignmentNumber": {
+          "@EndUserText.label": "Account assignment number",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DocumentItemText": {
+          "@EndUserText.label": "Item text",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SalesDocument": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDocumentItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Product": {
+          "@EndUserText.label": "Product number",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Supplier": {
+          "@EndUserText.label": "Supplier",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Customer": {
+          "@EndUserText.label": "Customer number",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServicesRenderedDate": {
+          "@EndUserText.label": "Date on which services are rendered",
+          "type": "cds.Date"
+        },
+        "PerformancePeriodStartDate": {
+          "@EndUserText.label": "Billing period of performance start date",
+          "type": "cds.Date"
+        },
+        "PerformancePeriodEndDate": {
+          "@EndUserText.label": "Billing period of performance end date",
+          "type": "cds.Date"
+        },
+        "ConditionContract": {
+          "@EndUserText.label": "Condition contract",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ExchangeRateDate": {
+          "@EndUserText.label": "Translation date",
+          "type": "cds.Date"
+        },
+        "FinancialAccountType": {
+          "@EndUserText.label": "Account type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SpecialGLCode": {
+          "@EndUserText.label": "Special g/l indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TaxCode": {
+          "@EndUserText.label": "Tax on sales/purchases code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxCountry": {
+          "@EndUserText.label": "Tax reporting country/region",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HouseBank": {
+          "@EndUserText.label": "House bank key",
+          "type": "cds.String",
+          "length": 5
+        },
+        "HouseBankAccount": {
+          "@EndUserText.label": "House bank account",
+          "type": "cds.String",
+          "length": 5
+        },
+        "IsOpenItemManaged": {
+          "@EndUserText.label": "Managed on an open item basis",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ClearingDate": {
+          "@EndUserText.label": "Clearing date",
+          "type": "cds.Date"
+        },
+        "ClearingAccountingDocument": {
+          "@EndUserText.label": "Clearing journal entry (deprecated)",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ClearingDocFiscalYear": {
+          "@EndUserText.label": "Fiscal year of clearing journal entry (deprecated)",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValueDate": {
+          "@EndUserText.label": "Value date",
+          "type": "cds.Date"
+        },
+        "AssetDepreciationArea": {
+          "@EndUserText.label": "Asset depreciation area (real or derived)",
+          "type": "cds.String",
+          "length": 2
+        },
+        "MasterFixedAsset": {
+          "@EndUserText.label": "Fixed asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "FixedAsset": {
+          "@EndUserText.label": "Asset subnumber",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AssetValueDate": {
+          "@EndUserText.label": "Asset value date",
+          "type": "cds.Date"
+        },
+        "AssetTransactionType": {
+          "@EndUserText.label": "Asset transaction type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AssetAcctTransClassfctn": {
+          "@EndUserText.label": "Transaction type category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DepreciationFiscalPeriod": {
+          "@EndUserText.label": "Fiscal period of depreciation",
+          "type": "cds.String",
+          "length": 3
+        },
+        "GroupMasterFixedAsset": {
+          "@EndUserText.label": "Group asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "GroupFixedAsset": {
+          "@EndUserText.label": "Group asset subnumber",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AssetClass": {
+          "@EndUserText.label": "Asset class",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerMasterFixedAsset": {
+          "@EndUserText.label": "Partner master fixed asset",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerFixedAsset": {
+          "@EndUserText.label": "Partner fixed asset",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CostEstimate": {
+          "@EndUserText.label": "Cost estimate",
+          "type": "cds.String",
+          "length": 12
+        },
+        "InventorySpecialStockValnType": {
+          "@EndUserText.label": "Inventory special stock valuation type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpecialStockType": {
+          "@EndUserText.label": "Inventory special stock type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventorySpclStkSalesDocument": {
+          "@EndUserText.label": "Inventory special stock sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InventorySpclStkSalesDocItm": {
+          "@EndUserText.label": "Inventory special stock sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "InvtrySpclStockWBSElmntIntID": {
+          "@EndUserText.label": "Inventory special stock wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "InventorySpclStockWBSElement": {
+          "@EndUserText.label": "Inventory special stock wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "InventorySpecialStockSupplier": {
+          "@EndUserText.label": "Supplier of inventory special stock",
+          "type": "cds.String",
+          "length": 10
+        },
+        "InventoryValuationType": {
+          "@EndUserText.label": "Inventory valuation type",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValuationArea": {
+          "@EndUserText.label": "Valuation area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SenderCompanyCode": {
+          "@EndUserText.label": "Company code in sender system",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SenderGLAccount": {
+          "@EndUserText.label": "Sender g/l account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SenderAccountAssignment": {
+          "@EndUserText.label": "Sender account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "SenderAccountAssignmentType": {
+          "@EndUserText.label": "Account assignment type in sender system",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ControllingObject": {
+          "@EndUserText.label": "Controlling object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "CostOriginGroup": {
+          "@EndUserText.label": "Origin group as subdivision of cost element",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OriginSenderObject": {
+          "@EndUserText.label": "Origin sender object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "ControllingDebitCreditCode": {
+          "@EndUserText.label": "Controlling debit credit code",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OriginCtrlgDebitCreditCode": {
+          "@EndUserText.label": "Debit/credit indicator (origin)",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ControllingObjectDebitType": {
+          "@EndUserText.label": "Controlling object debit type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsIncomplete": {
+          "@EndUserText.label": "Indicator: quantity is incomplete",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OffsettingAccount": {
+          "@EndUserText.label": "Offsetting account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OffsettingAccountType": {
+          "@EndUserText.label": "Offsetting account type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OffsettingChartOfAccounts": {
+          "@EndUserText.label": "Offsetting chart of accounts",
+          "type": "cds.String",
+          "length": 4
+        },
+        "LineItemIsCompleted": {
+          "@EndUserText.label": "Indicator: line item is completed",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PersonnelNumber": {
+          "@EndUserText.label": "Personnel number",
+          "type": "cds.String",
+          "length": 8
+        },
+        "ControllingObjectClass": {
+          "@EndUserText.label": "Object class",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerCompanyCode": {
+          "@EndUserText.label": "Partner company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerControllingObjectClass": {
+          "@EndUserText.label": "Partner object class",
+          "type": "cds.String",
+          "length": 2
+        },
+        "OriginProfitCenter": {
+          "@EndUserText.label": "Origin profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginOrder": {
+          "@EndUserText.label": "Origin order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OriginCostCtrActivityType": {
+          "@EndUserText.label": "Origin cost center activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "OriginCostCenter": {
+          "@EndUserText.label": "Origin cost center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "OriginProduct": {
+          "@EndUserText.label": "Origin product",
+          "type": "cds.String",
+          "length": 40
+        },
+        "VarianceOriginGLAccount": {
+          "@EndUserText.label": "Origin g/l account of a variance",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccountAssignment": {
+          "@EndUserText.label": "Account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "AccountAssignmentType": {
+          "@EndUserText.label": "Account assignment type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CostCtrActivityType": {
+          "@EndUserText.label": "Activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "OrderID": {
+          "@EndUserText.label": "Order id",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OrderCategory": {
+          "@EndUserText.label": "Order category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "WBSElement": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "PartnerWBSElementInternalID": {
+          "@EndUserText.label": "Partner wbs element internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerWBSElement": {
+          "@EndUserText.label": "Partner wbs element",
+          "type": "cds.String",
+          "length": 24
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "Project": {
+          "@EndUserText.label": "Project",
+          "type": "cds.String",
+          "length": 24
+        },
+        "PartnerProjectInternalID": {
+          "@EndUserText.label": "Partner project internal id",
+          "type": "cds.String",
+          "length": 8
+        },
+        "PartnerProject": {
+          "@EndUserText.label": "Partner project",
+          "type": "cds.String",
+          "length": 24
+        },
+        "OperatingConcern": {
+          "@EndUserText.label": "Operating concern",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProjectNetwork": {
+          "@EndUserText.label": "Network number for account assignment",
+          "type": "cds.String",
+          "length": 12
+        },
+        "RelatedNetworkActivity": {
+          "@EndUserText.label": "Network activity",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessProcess": {
+          "@EndUserText.label": "Business process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CostObject": {
+          "@EndUserText.label": "Cost object",
+          "type": "cds.String",
+          "length": 12
+        },
+        "BillableControl": {
+          "@EndUserText.label": "Billable control",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CostAnalysisResource": {
+          "@EndUserText.label": "Cost analysis resource",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerServiceNotification": {
+          "@EndUserText.label": "Customer service notification",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ServiceDocumentType": {
+          "@EndUserText.label": "Service document type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ServiceDocument": {
+          "@EndUserText.label": "Service document id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServiceDocumentItem": {
+          "@EndUserText.label": "Service document item id",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerServiceDocumentType": {
+          "@EndUserText.label": "Partner service document type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerServiceDocument": {
+          "@EndUserText.label": "Partner service document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerServiceDocumentItem": {
+          "@EndUserText.label": "Partner service document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ServiceContractType": {
+          "@EndUserText.label": "Service contract type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ServiceContract": {
+          "@EndUserText.label": "Service contract id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServiceContractItem": {
+          "@EndUserText.label": "Service contract item id",
+          "type": "cds.String",
+          "length": 6
+        },
+        "BusinessSolutionOrder": {
+          "@EndUserText.label": "Solution order",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessSolutionOrderItem": {
+          "@EndUserText.label": "Solution order item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ProviderContract": {
+          "@EndUserText.label": "Provider contract",
+          "type": "cds.String",
+          "length": 20
+        },
+        "ProviderContractItem": {
+          "@EndUserText.label": "Provider contract item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "RevenueAccountingContract": {
+          "@EndUserText.label": "Revenue accounting contract",
+          "type": "cds.String",
+          "length": 14
+        },
+        "PerformanceObligation": {
+          "@EndUserText.label": "Performance obligation",
+          "type": "cds.String",
+          "length": 16
+        },
+        "TimeSheetOvertimeCategory": {
+          "@EndUserText.label": "Overtime category",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerAccountAssignment": {
+          "@EndUserText.label": "Partner account assignment",
+          "type": "cds.String",
+          "length": 30
+        },
+        "PartnerAccountAssignmentType": {
+          "@EndUserText.label": "Partner account assignment type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "WorkPackage": {
+          "@EndUserText.label": "Plan item",
+          "type": "cds.String",
+          "length": 50
+        },
+        "WorkItem": {
+          "@EndUserText.label": "Work item id",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerCostCtrActivityType": {
+          "@EndUserText.label": "Partner cost center activity type",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerOrder": {
+          "@EndUserText.label": "Partner order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerOrderCategory": {
+          "@EndUserText.label": "Partner order category",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerSalesDocument": {
+          "@EndUserText.label": "Partner sales document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerSalesDocumentItem": {
+          "@EndUserText.label": "Partner sales document item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerProjectNetwork": {
+          "@EndUserText.label": "Partner project network",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerProjectNetworkActivity": {
+          "@EndUserText.label": "Partner project network activity",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerBusinessProcess": {
+          "@EndUserText.label": "Partner business process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "PartnerCostObject": {
+          "@EndUserText.label": "Partner cost object",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ControllingDocumentItem": {
+          "@EndUserText.label": "Controlling document item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "BillingDocumentType": {
+          "@EndUserText.label": "Billing type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesOrganization": {
+          "@EndUserText.label": "Sales organization",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "@EndUserText.label": "Distribution channel",
+          "type": "cds.String",
+          "length": 2
+        },
+        "OrganizationDivision": {
+          "@EndUserText.label": "Division",
+          "type": "cds.String",
+          "length": 2
+        },
+        "SoldProduct": {
+          "@EndUserText.label": "Product sold",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SoldProductGroup": {
+          "@EndUserText.label": "Product sold group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "CustomerGroup": {
+          "@EndUserText.label": "Customer group",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerSupplierCountry": {
+          "@EndUserText.label": "Customer or supplier country/region",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CustomerSupplierIndustry": {
+          "@EndUserText.label": "Customer supplier industry",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesDistrict": {
+          "@EndUserText.label": "Sales district",
+          "type": "cds.String",
+          "length": 6
+        },
+        "BillToParty": {
+          "@EndUserText.label": "Bill-to party",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ShipToParty": {
+          "@EndUserText.label": "Ship-to party",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerSupplierCorporateGroup": {
+          "@EndUserText.label": "Customer supplier corporate group",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CashLedgerCompanyCode": {
+          "@EndUserText.label": "Cash origin company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CashLedgerAccount": {
+          "@EndUserText.label": "Cash origin account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FundsCenter": {
+          "@EndUserText.label": "Funds management center",
+          "type": "cds.String",
+          "length": 16
+        },
+        "FundedProgram": {
+          "@EndUserText.label": "Funded program",
+          "type": "cds.String",
+          "length": 24
+        },
+        "Fund": {
+          "@EndUserText.label": "Fund",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GrantID": {
+          "@EndUserText.label": "Grant",
+          "type": "cds.String",
+          "length": 20
+        },
+        "BudgetPeriod": {
+          "@EndUserText.label": "Budget period",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerFund": {
+          "@EndUserText.label": "Partner fund",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerGrant": {
+          "@EndUserText.label": "Partner grant",
+          "type": "cds.String",
+          "length": 20
+        },
+        "PartnerBudgetPeriod": {
+          "@EndUserText.label": "Fm: partner budget period",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PubSecBudgetAccount": {
+          "@EndUserText.label": "Budget account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PubSecBudgetAccountCoCode": {
+          "@EndUserText.label": "Budget account company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PubSecBudgetCnsmpnDate": {
+          "@EndUserText.label": "Budget consumption date",
+          "type": "cds.Date"
+        },
+        "PubSecBudgetCnsmpnFsclPeriod": {
+          "@EndUserText.label": "Cc fiscal period for budget consumption date",
+          "type": "cds.String",
+          "length": 3
+        },
+        "PubSecBudgetCnsmpnFsclYear": {
+          "@EndUserText.label": "Cc fiscal year for budget consumption date",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PubSecBudgetIsRelevant": {
+          "@EndUserText.label": "Budget-relevant indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PubSecBudgetCnsmpnType": {
+          "@EndUserText.label": "Budget consumption type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PubSecBudgetCnsmpnAmtType": {
+          "@EndUserText.label": "Budget consumption amount type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SponsoredProgram": {
+          "@EndUserText.label": "Sponsored program",
+          "type": "cds.String",
+          "length": 20
+        },
+        "SponsoredClass": {
+          "@EndUserText.label": "Sponsored class",
+          "type": "cds.String",
+          "length": 20
+        },
+        "GteeMBudgetValidityNumber": {
+          "@EndUserText.label": "Budget validity number",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "length": 6
+        },
+        "JointVentureEquityGroup": {
+          "@EndUserText.label": "Joint venture equity group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVentureCostRecoveryCode": {
+          "@EndUserText.label": "Joint venture cost recovery code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "JointVenturePartner": {
+          "@EndUserText.label": "Joint venture partner",
+          "type": "cds.String",
+          "length": 10
+        },
+        "JointVentureBillingType": {
+          "@EndUserText.label": "Joint venture billing type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Joint venture equity type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "JointVentureProductionDate": {
+          "@EndUserText.label": "Joint venture production date",
+          "type": "cds.Date"
+        },
+        "JointVentureBillingDate": {
+          "@EndUserText.label": "Joint venture billing date",
+          "type": "cds.Date"
+        },
+        "JointVentureOperationalDate": {
+          "@EndUserText.label": "Joint venture operational date",
+          "type": "cds.Date"
+        },
+        "JointVentureAccountingActivity": {
+          "@EndUserText.label": "Joint venture accounting activity",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerVenture": {
+          "@EndUserText.label": "Partner venture",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PartnerEquityGroup": {
+          "@EndUserText.label": "Partner equity group",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SenderCostRecoveryCode": {
+          "@EndUserText.label": "Sender cost recovery code",
+          "type": "cds.String",
+          "length": 2
+        },
+        "CutbackAccount": {
+          "@EndUserText.label": "Cutback account",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CutbackCostObject": {
+          "@EndUserText.label": "Cutback cost object",
+          "type": "cds.String",
+          "length": 22
+        },
+        "REBusinessEntity": {
+          "@EndUserText.label": "Re business entity",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateBuilding": {
+          "@EndUserText.label": "Real estate building",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateProperty": {
+          "@EndUserText.label": "Real estate property",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RERentalObject": {
+          "@EndUserText.label": "Re rental object",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstateContract": {
+          "@EndUserText.label": "Real estate contract",
+          "type": "cds.String",
+          "length": 13
+        },
+        "REServiceChargeKey": {
+          "@EndUserText.label": "Re service charge key",
+          "type": "cds.String",
+          "length": 4
+        },
+        "RESettlementUnitID": {
+          "@EndUserText.label": "Re settlement unit",
+          "type": "cds.String",
+          "length": 5
+        },
+        "SettlementReferenceDate": {
+          "@EndUserText.label": "Settlement reference date",
+          "type": "cds.Date"
+        },
+        "REPartnerBusinessEntity": {
+          "@EndUserText.label": "Re partner business entity",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerBuilding": {
+          "@EndUserText.label": "Real estate partner building",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerProperty": {
+          "@EndUserText.label": "Real estate partner property",
+          "type": "cds.String",
+          "length": 8
+        },
+        "REPartnerRentalObject": {
+          "@EndUserText.label": "Re partner rental object",
+          "type": "cds.String",
+          "length": 8
+        },
+        "RealEstatePartnerContract": {
+          "@EndUserText.label": "Real estate partner contract",
+          "type": "cds.String",
+          "length": 13
+        },
+        "REPartnerServiceChargeKey": {
+          "@EndUserText.label": "Re partner service charge key",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REPartnerSettlementUnitID": {
+          "@EndUserText.label": "Re partner settlement unit",
+          "type": "cds.String",
+          "length": 5
+        },
+        "PartnerSettlementReferenceDate": {
+          "@EndUserText.label": "Partner reference date for settlement",
+          "type": "cds.Date"
+        },
+        "AccrualObjectType": {
+          "@EndUserText.label": "Type of the accrual object",
+          "type": "cds.String",
+          "length": 4
+        },
+        "AccrualObject": {
+          "@EndUserText.label": "Identifier of the accrual object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "AccrualSubobject": {
+          "@EndUserText.label": "Identifier of the accrual subobject",
+          "type": "cds.String",
+          "length": 32
+        },
+        "AccrualItemType": {
+          "@EndUserText.label": "Type of the item of the accrual subobject",
+          "type": "cds.String",
+          "length": 11
+        },
+        "AccrualValueDate": {
+          "@EndUserText.label": "Accrual value date",
+          "type": "cds.Date"
+        },
+        "FinancialValuationObjectType": {
+          "@EndUserText.label": "Financial valuation object type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FinancialValuationObject": {
+          "@EndUserText.label": "Financial valuation object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "FinancialValuationSubobject": {
+          "@EndUserText.label": "Financial valuation subobject",
+          "type": "cds.String",
+          "length": 32
+        },
+        "NetDueDate": {
+          "@EndUserText.label": "Net due date",
+          "type": "cds.Date"
+        },
+        "CreditRiskClass": {
+          "@EndUserText.label": "Credit risk class",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WorkCenterInternalID": {
+          "@EndUserText.label": "Object id of the resource",
+          "type": "cds.String",
+          "length": 8
+        },
+        "OrderOperation": {
+          "@EndUserText.label": "Operation/activity number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderItem": {
+          "@EndUserText.label": "Order item number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerOrderItem": {
+          "@EndUserText.label": "Partner order item number",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderSuboperation": {
+          "@EndUserText.label": "Suboperation",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Equipment": {
+          "@EndUserText.label": "Equipment number",
+          "type": "cds.String",
+          "length": 18
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "length": 30
+        },
+        "Assembly": {
+          "@EndUserText.label": "Assembly",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MaintenanceActivityType": {
+          "@EndUserText.label": "Maintenance activity type",
+          "type": "cds.String",
+          "length": 3
+        },
+        "MaintenanceOrderPlanningCode": {
+          "@EndUserText.label": "Maintenance order planning indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "MaintPriorityType": {
+          "@EndUserText.label": "Priority type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "MaintPriority": {
+          "@EndUserText.label": "Priority",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SuperiorOrder": {
+          "@EndUserText.label": "Number of superior order",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ProductGroup": {
+          "@EndUserText.label": "Product group",
+          "type": "cds.String",
+          "length": 9
+        },
+        "MaintenanceOrderIsPlanned": {
+          "@EndUserText.label": "Planned parts/work",
+          "type": "cds.String",
+          "length": 1
+        },
+        "JrnlEntryItemMigrationSource": {
+          "@EndUserText.label": "Journal entry item migration source",
+          "type": "cds.String",
+          "length": 1
+        },
+        "AccountingNotificationUUID": {
+          "@EndUserText.label": "Accounting notification uuid",
+          "type": "cds.Binary",
+          "length": 16
+        },
+        "OffsettingLedgerGLLineItem": {
+          "@EndUserText.label": "General ledger offsetting entry line item",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReversalReferenceDocumentType": {
+          "@EndUserText.label": "Reversal reference document type",
+          "type": "cds.String",
+          "length": 5
+        },
+        "FixedAmountInTransCrcy": {
+          "@EndUserText.label": "Fixed amount in transaction currency",
+          "type": "cds.DecimalFloat"
+        },
+        "IncmpltSummableValnQtyUnt": {
+          "@EndUserText.label": "Incomplete summable valuation quantity unit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncmpltSummableValnQty": {
+          "@EndUserText.label": "Incomplete summable valuation quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "IncmpltSummableValnFxdQty": {
+          "@EndUserText.label": "Incomplete summable valuation fix quantity",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "JournalEntryItemCategory": {
+          "@EndUserText.label": "Journal entry item category",
+          "type": "cds.String",
+          "length": 5
+        },
+        "ComponentBreakdown": {
+          "@EndUserText.label": "Component breakdown",
+          "type": "cds.String",
+          "length": 16
+        },
+        "CompBreakdownScaleNumerator": {
+          "@EndUserText.label": "Component breakdown scale numerator",
+          "precision": 23,
+          "scale": 3,
+          "type": "cds.Decimal"
+        },
+        "ClearingJournalEntryFiscalYear": {
+          "@EndUserText.label": "Fiscal year of clearing journal entry",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ClearingJournalEntry": {
+          "@EndUserText.label": "Clearing journal entry",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GeneralLedgerAgingScope": {
+          "@EndUserText.label": "General ledger aging scope",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GeneralLedgerAgingIncrement": {
+          "@EndUserText.label": "General ledger aging increment",
+          "type": "cds.String",
+          "length": 15
+        },
+        "IsSupplierStockValuation": {
+          "@EndUserText.label": "Is supplier stock valuation",
+          "type": "cds.String",
+          "length": 1
+        },
+        "MaterialLedgerProcessType": {
+          "@EndUserText.label": "Material ledger process type (procurement/consumption)",
+          "type": "cds.String",
+          "length": 4
+        },
+        "MaterialLedgerCategory": {
+          "@EndUserText.label": "Category in material ledger update structure",
+          "type": "cds.String",
+          "length": 2
+        },
+        "SlsPriceAmountInCoCodeCrcy": {
+          "@EndUserText.label": "Sales price amount in company code currency",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductPriceControl": {
+          "@EndUserText.label": "Product price control indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProcurementAlternative": {
+          "@EndUserText.label": "Procurement alternative",
+          "type": "cds.String",
+          "length": 12
+        },
+        "ProductionProcess": {
+          "@EndUserText.label": "Production process",
+          "type": "cds.String",
+          "length": 12
+        },
+        "StstclAccountAssignmentType1": {
+          "@EndUserText.label": "Statistical account assignment type 1",
+          "type": "cds.String",
+          "length": 2
+        },
+        "StstclAccountAssignmentType2": {
+          "@EndUserText.label": "Statistical account assignment type 2",
+          "type": "cds.String",
+          "length": 2
+        },
+        "StstclAccountAssignmentType3": {
+          "@EndUserText.label": "Statistical account assignment type 3",
+          "type": "cds.String",
+          "length": 2
+        },
+        "VarianceOriginGroup": {
+          "@EndUserText.label": "Variance origin group",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CommitmentItem": {
+          "@EndUserText.label": "Commitment item",
+          "type": "cds.String",
+          "length": 24
+        },
+        "EarmarkedFundsDocument": {
+          "@EndUserText.label": "Earmarked funds document",
+          "type": "cds.String",
+          "length": 10
+        },
+        "EarmarkedFundsDocumentItem": {
+          "@EndUserText.label": "Earmarked funds document item",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FinancialServicesProductGroup": {
+          "@EndUserText.label": "Financial services product group",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialServicesBranch": {
+          "@EndUserText.label": "Financial services branch",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FinancialDataSource": {
+          "@EndUserText.label": "Financial data source",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccrualObjectLogicalSystem": {
+          "@EndUserText.label": "Logical system of the accrual object",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AccrualReferenceObject": {
+          "@EndUserText.label": "Accrual reference object",
+          "type": "cds.String",
+          "length": 32
+        },
+        "OriginOrderOperation": {
+          "@EndUserText.label": "Origin order operation",
+          "type": "cds.String",
+          "length": 4
+        },
+        "JournalEntryIsSecondaryEntry": {
+          "@EndUserText.label": "Journal entry is secondary entry",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change_Type",
+          "type": "cds.String",
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change_Date",
+          "type": "cds.Timestamp",
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "02_DWH_LT_UNIVERSALLEDGER",
+      "@EndUserText.label": "02 DWH LT Universal Ledger",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_GBBAYFPX"
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}

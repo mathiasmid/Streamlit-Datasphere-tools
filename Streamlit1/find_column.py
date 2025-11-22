@@ -1,5 +1,3 @@
-import streamlit_app as app
-
 import utils
 import pandas as pd
 

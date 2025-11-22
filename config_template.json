@@ -1,0 +1,18 @@
+{
+  "DATASPHERE": {
+    "dsp_host": "https://your-tenant.hcs.cloud.sap",
+    "dsp_space": "YOUR_SPACE_ID (optional)"
+  },
+  "HDB": {
+    "hdb_address": "your-hana-address.hanacloud.ondemand.com",
+    "hdb_port": 443,
+    "hdb_user": "DWCDBUSER#YOURUSER",
+    "hdb_password": "your_password"
+  },
+  "OAUTH": {
+    "client_id": "your_client_id",
+    "client_secret": "your_client_secret",
+    "authorization_url": "https://your-tenant.hcs.cloud.sap/oauth/authorize",
+    "token_url": "https://your-tenant.hcs.cloud.sap/oauth/token"
+  }
+}

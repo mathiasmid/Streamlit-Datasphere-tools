@@ -1,0 +1,52 @@
+PROPRIETARY SOFTWARE LICENSE
+
+SAP Datasphere Tools
+Copyright (c) 2024-2025 Delaware Consulting
+
+INTERNAL USE ONLY
+
+This software and associated documentation files (the "Software") are the
+proprietary property of Delaware Consulting and are intended for internal
+use only by authorized Delaware employees and contractors.
+
+RESTRICTIONS:
+
+1. The Software is confidential and proprietary to Delaware Consulting.
+
+2. The Software may ONLY be used by authorized Delaware employees and
+   contractors for internal business purposes related to SAP Datasphere
+   administration and analysis.
+
+3. Distribution, sharing, or provision of the Software to any third party,
+   including clients, is strictly prohibited without prior written
+   authorization from Delaware management.
+
+4. Modification of the Software is permitted only by authorized personnel
+   for internal business purposes.
+
+5. The Software is provided "AS IS" without warranty of any kind, express
+   or implied, including but not limited to warranties of merchantability,
+   fitness for a particular purpose, or non-infringement.
+
+6. In no event shall Delaware Consulting be liable for any claim, damages,
+   or other liability arising from the use of the Software.
+
+7. Users are responsible for ensuring that no sensitive credentials,
+   authentication tokens, or client data are shared outside of approved
+   secure channels.
+
+SECURITY NOTICE:
+
+This Software handles sensitive authentication credentials and database
+connections. Users must:
+- Never commit configuration files containing credentials to public repositories
+- Never share OAuth tokens or database passwords
+- Follow Delaware's information security policies at all times
+- Report any security incidents immediately to IT Security
+
+For questions about this license or authorized use, contact:
+Delaware IT Management
+delaware.com
+
+Original Author: Tobias Meyer
+Maintainers: Delaware Datasphere Team

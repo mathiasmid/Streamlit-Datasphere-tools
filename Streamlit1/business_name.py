@@ -4,13 +4,19 @@ import utils
 import json
 
 def get_business_and_technical_name(artifact):
+    # Get dsp_space from V2 app_config or V1 session state
+    if 'app_config' in st.session_state:
+        dsp_space = st.session_state['app_config'].dsp_space
+    else:
+        dsp_space = st.session_state.get('dsp_space')
+
     query = f'''
         SELECT A.CSN
-        FROM "{st.session_state.dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$" A
+        FROM "{dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$" A
         INNER JOIN (
           SELECT ARTIFACT_NAME, MAX(ARTIFACT_VERSION) AS MAX_ARTIFACT_VERSION
-          FROM "{st.session_state.dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$"
-          WHERE SCHEMA_NAME = '{st.session_state.dsp_space}'  AND ARTIFACT_NAME = '{artifact}'
+          FROM "{dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$"
+          WHERE SCHEMA_NAME = '{dsp_space}'  AND ARTIFACT_NAME = '{artifact}'
           GROUP BY ARTIFACT_NAME
 
         ) B

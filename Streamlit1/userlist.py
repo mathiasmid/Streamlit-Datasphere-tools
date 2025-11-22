@@ -1,15 +1,17 @@
 import streamlit as st
-import streamlit_app as app
 import utils
 import requests
 from datetime import datetime
 import pandas as pd
+from Streamlit1.config_helpers import get_credentials_from_session
 
 def get_user_overview():
+    # Get credentials from V2 app_config or V1 session state
+    creds = get_credentials_from_session()
 
-    header = utils.initializeGetOAuthSession(st.session_state.token, st.session_state.secret)
+    header = utils.initializeGetOAuthSession(creds['token'], creds['secret'])
     today = datetime.now().date()
-    url = utils.get_url(st.session_state.dsp_host, 'user_list')
+    url = utils.get_url(creds['dsp_host'], 'user_list')
     response = requests.get(url, headers=header)
     user_json = response.json()
     user_list = []

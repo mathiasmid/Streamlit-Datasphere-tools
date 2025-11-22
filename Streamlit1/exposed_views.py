@@ -4,13 +4,19 @@ import streamlit as st
 import utils
 
 def get_csn_files():
+    # Get dsp_space from V2 app_config or V1 session state
+    if 'app_config' in st.session_state:
+        dsp_space = st.session_state['app_config'].dsp_space
+    else:
+        dsp_space = st.session_state.get('dsp_space')
+
     query = f'''
         SELECT A.ARTIFACT_NAME, A.CSN, A.ARTIFACT_VERSION
-        FROM "{st.session_state.dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$" A
+        FROM "{dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$" A
         INNER JOIN (
           SELECT ARTIFACT_NAME, MAX(ARTIFACT_VERSION) AS MAX_ARTIFACT_VERSION
-          FROM "{st.session_state.dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$"
-          WHERE SCHEMA_NAME = '{st.session_state.dsp_space}' AND ARTIFACT_NAME NOT LIKE '%$%' AND PLUGIN_NAME in ('tableFunction', 'InAModel')
+          FROM "{dsp_space}$TEC"."$$DEPLOY_ARTIFACTS$$"
+          WHERE SCHEMA_NAME = '{dsp_space}' AND ARTIFACT_NAME NOT LIKE '%$%' AND PLUGIN_NAME in ('tableFunction', 'InAModel')
           GROUP BY ARTIFACT_NAME
 
         ) B
@@ -20,6 +26,12 @@ def get_csn_files():
     return utils.database_connection(query)
 
 def get_exposed_views():
+    # Get dsp_space from V2 app_config or V1 session state
+    if 'app_config' in st.session_state:
+        dsp_space = st.session_state['app_config'].dsp_space
+    else:
+        dsp_space = st.session_state.get('dsp_space')
+
     exposedViews = []
     dac_objects = []
     dac_items = []
@@ -39,6 +51,11 @@ def get_exposed_views():
             exposed = csn_loaded['definitions'][objectName]['@DataWarehouse.consumption.external']
         except KeyError:
             exposed = False
+
+        # Only process if the view is exposed
+        if not exposed:
+            continue
+
         try:
             for dac in csn_loaded['definitions'][objectName]['@DataWarehouse.dataAccessControl.usage']:
 
@@ -55,8 +72,6 @@ def get_exposed_views():
             dac_items.clear()
             dac_objects.clear()
 
-        exposedViews.append((st.session_state.dsp_space, objectName, label, exposed, ', '.join(f'{item}' for item in dac_items), ', '.join(f'{object}' for object in dac_objects)))
+        exposedViews.append((dsp_space, objectName, label, exposed, ', '.join(f'{item}' for item in dac_items), ', '.join(f'{object}' for object in dac_objects)))
 
     return pd.DataFrame(exposedViews, columns=['Space', 'Object', 'Description', 'Exposed', 'DAC Item', 'DAC Object'])
-    
- 
