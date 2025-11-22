@@ -1,4 +1,4 @@
-import dsp_token
+from . import dsp_token
 
 def initializeGetOAuthSession(token_file, secrets_file):
     token = ''

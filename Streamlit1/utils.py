@@ -1,5 +1,5 @@
 import json
-import dsp_token
+from . import dsp_token
 from json.decoder import JSONDecodeError
 from datetime import datetime, timedelta
 from hdbcli import dbapi

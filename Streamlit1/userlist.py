@@ -3,7 +3,7 @@ from . import utils
 import requests
 from datetime import datetime
 import pandas as pd
-from Streamlit1.config_helpers import get_credentials_from_session
+from .config_helpers import get_credentials_from_session
 
 def get_user_overview():
     # Get credentials from V2 app_config or V1 session state

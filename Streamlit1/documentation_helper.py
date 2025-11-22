@@ -3,7 +3,7 @@ import streamlit as st
 from . import utils
 import json
 import requests
-from Streamlit1.config_helpers import get_credentials_from_session
+from .config_helpers import get_credentials_from_session
 
 
 def derive_space_from_object_name(object_name):

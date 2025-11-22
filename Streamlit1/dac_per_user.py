@@ -1,6 +1,6 @@
 import json
 import requests
-import dsp_token
+from . import dsp_token
 import logging
 from json.decoder import JSONDecodeError
 from hdbcli import dbapi  # To connect to SAP HANA Database underneath SAP Datasphere to fetch metadata
