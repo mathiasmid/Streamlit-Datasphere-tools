@@ -73,9 +73,8 @@ test_api_responses.py
 # Scripts and build tools (internal distribution only)
 scripts/
 
-# Legacy code and old structure
+# Legacy code
 legacy_code/
-Streamlit1/
 
 # Development tools
 update_imports.py

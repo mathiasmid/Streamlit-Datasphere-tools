@@ -1,10 +1,14 @@
+# Streamlit1 imports
 from Streamlit1 import object_dependencies, documentation_helper_ui, documentation_helper, export_objects, exposed_views, userlist, find_column, business_name
 from Streamlit1 import cache_manager as cm
 from Streamlit1 import config_manager_v2 as config_manager
+from Streamlit1 import utils
 # Import new V2 modules
 from Streamlit1.settings_ui import settings_page as settings_v2
 from Streamlit1.lineage_ui import lineage_analyzer_page
 from Streamlit1.documentation_ui import documentation_generator_page
+
+# Standard library imports
 import streamlit as st
 import json
 import pandas as pd
@@ -12,7 +16,6 @@ from requests_oauthlib import OAuth2Session
 import urllib.parse
 import requests
 from datetime import datetime, timedelta
-import utils
 import time
 
 st.set_page_config(
