@@ -446,7 +446,7 @@ def get_list_of_space_cached() -> List[Tuple[str]]:
             return [(space.space_id,) for space in spaces]
 
     # Fallback to database query
-    import utils
+    from . import utils
     return utils.get_list_of_space()
 
 
@@ -463,7 +463,7 @@ def get_space_business_names_cached() -> Dict[str, str]:
             return names
 
     # Fallback to API
-    import utils
+    from . import utils
     return utils.get_space_business_names()
 
 
@@ -489,7 +489,7 @@ def get_all_objects_cached() -> List[Dict]:
             ]
 
     # Fallback to database query
-    import utils
+    from . import utils
     return utils.get_all_objects()
 
 
