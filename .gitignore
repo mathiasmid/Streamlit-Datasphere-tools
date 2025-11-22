@@ -58,6 +58,12 @@ app.log
 # Distribution packages
 *.zip
 *.tar.gz
+*.spec
+
+# PyInstaller build artifacts
+build/
+dist/
+DatasphereTools_v*.zip
 
 # Test/Example data
 API*.txt

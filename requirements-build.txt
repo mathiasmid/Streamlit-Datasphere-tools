@@ -1,0 +1,8 @@
+# Build Requirements for Creating Executable
+# Install these in addition to requirements.txt when building distributions
+
+# PyInstaller for creating standalone executables
+pyinstaller>=6.0.0
+
+# Optional: For code signing (if needed)
+# pywin32>=306
