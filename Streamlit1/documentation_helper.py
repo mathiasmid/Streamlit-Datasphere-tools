@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import utils
+from . import utils
 import json
 import requests
 from Streamlit1.config_helpers import get_credentials_from_session

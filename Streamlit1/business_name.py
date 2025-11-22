@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import utils
+from . import utils
 import json
 
 def get_business_and_technical_name(artifact):

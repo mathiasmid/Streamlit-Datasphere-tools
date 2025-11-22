@@ -1,5 +1,5 @@
 import streamlit as st
-import utils
+from . import utils
 import requests
 from datetime import datetime
 import pandas as pd

@@ -1,4 +1,4 @@
-import utils
+from . import utils
 import pandas as pd
 
 def find_objects(column):

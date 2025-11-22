@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 import streamlit as st
-import utils
+from . import utils
 
 def get_csn_files():
     # Get dsp_space from V2 app_config or V1 session state

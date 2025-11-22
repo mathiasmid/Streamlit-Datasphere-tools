@@ -1,6 +1,6 @@
 import pandas as pd
 import json
-import utils
+from . import utils
 
 def get_objects(object):
     query = f'''

@@ -4,7 +4,7 @@ import dsp_token
 import logging
 from json.decoder import JSONDecodeError
 from hdbcli import dbapi  # To connect to SAP HANA Database underneath SAP Datasphere to fetch metadata
-import utils
+from . import utils
 import pandas as pd # To write the result into a dataframe
 import datetime
 with open('config_files/windhoff.json', 'r') as f:
