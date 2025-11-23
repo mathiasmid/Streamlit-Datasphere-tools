@@ -254,7 +254,9 @@ class HANAClient:
 
     def get_object_csn(self, space_id: str, object_name: str) -> Optional[CSNDefinition]:
         """
-        Fetch and parse CSN definition for a specific object.
+        Fetch and parse CSN definition for a specific object using the latest version.
+
+        Uses the same query logic as documentation_helper.py to ensure compatibility.
 
         Args:
             space_id: Space ID
@@ -266,18 +268,22 @@ class HANAClient:
         Raises:
             DatabaseError: If query fails
         """
-        query = """
-            SELECT ARTIFACT
-            FROM "$$DEPLOY_ARTIFACTS$$"
-            WHERE SCHEMA_NAME = ?
-            AND ARTIFACT_NAME = ?
-        """
-
-        schema_name = f"{space_id}$TEC"
-        params = (schema_name, object_name)
+        # Use the same query pattern as documentation_helper.py
+        query = f'''
+            SELECT A.CSN
+            FROM "{space_id}$TEC"."$$DEPLOY_ARTIFACTS$$" A
+            INNER JOIN (
+              SELECT ARTIFACT_NAME, MAX(ARTIFACT_VERSION) AS MAX_ARTIFACT_VERSION
+              FROM "{space_id}$TEC"."$$DEPLOY_ARTIFACTS$$"
+              WHERE SCHEMA_NAME = '{space_id}' AND ARTIFACT_NAME = '{object_name}'
+              GROUP BY ARTIFACT_NAME
+            ) B
+            ON A.ARTIFACT_NAME = B.ARTIFACT_NAME
+            AND A.ARTIFACT_VERSION = B.MAX_ARTIFACT_VERSION
+        '''
 
         try:
-            results = self.execute_query(query, params)
+            results = self.execute_query(query)
 
             if not results:
                 logger.warning(f"No CSN found for {object_name} in {space_id}")
@@ -293,9 +299,17 @@ class HANAClient:
 
             # Extract object definition from CSN
             definitions = csn_data.get('definitions', {})
+            # The object name in the CSN might be the first key
             if object_name in definitions:
                 csn_def = CSNDefinition.from_csn(object_name, definitions[object_name])
                 logger.info(f"Parsed CSN for {object_name}: {len(csn_def.elements)} fields")
+                return csn_def
+            elif len(definitions) > 0:
+                # If the exact name doesn't match, use the first definition
+                first_object = list(definitions.keys())[0]
+                logger.info(f"Using first CSN definition: {first_object}")
+                csn_def = CSNDefinition.from_csn(first_object, definitions[first_object])
+                logger.info(f"Parsed CSN for {first_object}: {len(csn_def.elements)} fields")
                 return csn_def
 
             logger.warning(f"Object {object_name} not found in CSN definitions")
